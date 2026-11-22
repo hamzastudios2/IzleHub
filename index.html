@@ -1,120 +1,1166 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080b16">
-  <meta name="description" content="HamzaStudios2x — Büyük güncelleme ve yeniden yapılanma süreci.">
-  <title>HamzaStudios2x — Büyük Güncelleme</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #080b16;
-      --panel: rgba(17, 23, 43, .76);
-      --line: rgba(164, 178, 255, .16);
-      --muted: #a8b0c8;
-      --white: #f5f7ff;
-      --cyan: #73e4ff;
-      --violet: #a78bfa;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; min-height: 100vh; color: var(--white);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(ellipse at 15% 15%, rgba(81, 91, 220, .22), transparent 36%),
-        radial-gradient(ellipse at 85% 75%, rgba(0, 199, 221, .14), transparent 34%),
-        var(--bg);
-      display: grid; place-items: center; padding: 28px 18px; overflow-x: hidden;
-    }
-    body::before {
-      content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .16;
-      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: linear-gradient(to bottom, black, transparent 88%);
-    }
-    .shell { width: min(920px, 100%); position: relative; }
-    .topbar { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:24px; }
-    .brand { display:flex; align-items:center; gap:11px; font-weight:750; letter-spacing:.02em; }
-    .mark {
-      width:38px; height:38px; border-radius:12px; display:grid; place-items:center;
-      color:#07101b; font-weight:900; background:linear-gradient(135deg,var(--cyan),var(--violet));
-      box-shadow:0 0 28px rgba(115,228,255,.22);
-    }
-    .status { color:#d9d5ff; border:1px solid rgba(167,139,250,.28); background:rgba(167,139,250,.09);
-      border-radius:999px; padding:8px 12px; font-size:11px; letter-spacing:.13em; text-transform:uppercase; }
-    .card {
-      border:1px solid var(--line); border-radius:28px; padding:clamp(28px,6vw,66px);
-      background:linear-gradient(145deg, rgba(20,27,50,.88), rgba(10,14,28,.88));
-      box-shadow:0 30px 100px rgba(0,0,0,.42), inset 0 1px rgba(255,255,255,.05);
-      backdrop-filter: blur(18px);
-    }
-    .eyebrow { color:var(--cyan); font-size:12px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; }
-    h1 { margin:18px 0 16px; max-width:760px; font-size:clamp(38px,7.5vw,76px); line-height:.99; letter-spacing:-.055em; }
-    h1 span { background:linear-gradient(90deg,var(--cyan),#c5b5ff 72%); color:transparent; background-clip:text; }
-    .lead { max-width:680px; color:#c0c7dc; font-size:clamp(15px,2vw,18px); line-height:1.8; }
-    .rule { height:1px; background:linear-gradient(90deg, transparent, var(--line), transparent); margin:34px 0; }
-    .notice {
-      display:flex; gap:14px; padding:18px; border:1px solid rgba(115,228,255,.18);
-      border-radius:18px; background:rgba(115,228,255,.055); margin-top:26px;
-    }
-    .notice-icon { flex:0 0 34px; height:34px; border-radius:11px; display:grid; place-items:center;
-      color:var(--cyan); background:rgba(115,228,255,.12); font-size:18px; }
-    .notice strong { display:block; margin-bottom:5px; font-size:14px; }
-    .notice p { margin:0; color:var(--muted); font-size:13px; line-height:1.7; }
-    .sorry { margin:24px 0 0; color:#d7d9e7; font-size:14px; }
-    footer { display:flex; justify-content:space-between; gap:12px; color:#737d99; font-size:11px; padding:20px 5px 0; }
-    @media (max-width:560px) {
-      .topbar { align-items:flex-start; flex-direction:column; }
-      .card { border-radius:22px; }
-      footer { flex-direction:column; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>İzleHub</title>
+<meta name="google-site-verification" content="zMNZDjifhIesob_o8TNpFi7V8YJ4-JWkOGSn_xl_65E" />
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ffffff">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("izlehub_theme")||"light"}catch(e){}</script>
+<style>
+:root{--bg:#ffffff;--panel:#f3faf6;--panel2:#e5f4ec;--line:#d2e7db;--text:#0f2a1d;--mute:#5b7a69;--green:#16a36a;--green2:#0f8456;--blue:#34c58a;--red:#e5484d}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.5}
+button,input,textarea{font:inherit;color:inherit}
+a{color:var(--green)}
+.app{display:grid;grid-template-columns:250px minmax(0,600px) 300px;justify-content:center;min-height:100vh}
+aside{padding:16px 14px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:6px}
+.brand{display:flex;align-items:center;gap:10px;padding:6px 10px 14px;font-size:26px;font-weight:800}
+.brand img,.brand .logo{width:42px;height:42px;border-radius:12px;object-fit:cover;background:var(--green);display:grid;place-items:center;font-size:22px}
+.nav{background:none;border:0;text-align:left;padding:12px 16px;border-radius:999px;font-size:19px;cursor:pointer;font-weight:500}
+.nav:hover,.nav.on{background:var(--panel2)}
+.nav.on{font-weight:700;color:var(--green)}
+.btn{background:var(--green);color:#fff;border:0;border-radius:999px;padding:10px 22px;font-weight:700;cursor:pointer}
+.btn:hover{background:#2fd1a0}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--text)}
+.btn:disabled{opacity:.5;cursor:default}
+main{border-left:1px solid var(--line);border-right:1px solid var(--line);min-height:100vh}
+.top{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);padding:14px 18px;border-bottom:1px solid var(--line);font-size:20px;font-weight:700}
+.compose{display:flex;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--green));display:grid;place-items:center;font-weight:800;flex:none}
+.compose textarea{width:100%;background:none;border:0;outline:0;resize:none;font-size:19px;min-height:60px}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:8px}
+.row input[type=url]{flex:1;min-width:160px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 14px;outline:0}
+.file{cursor:pointer;color:var(--green);font-weight:500}
+.post{display:flex;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.post:hover{background:#f0f9f4}
+.pb{flex:1;min-width:0}
+.meta{color:var(--mute);font-size:15px}.meta b{color:var(--text)}
+.txt{white-space:pre-wrap;word-wrap:break-word;margin:4px 0 8px}
+video,iframe{width:100%;border-radius:16px;border:1px solid var(--line);background:#000;max-height:420px;aspect-ratio:16/9}
+.act{display:flex;gap:24px;margin-top:10px;color:var(--mute)}
+.act button{background:none;border:0;cursor:pointer;color:var(--mute);display:flex;gap:6px;align-items:center}
+.act button:hover{color:var(--green)}.act .liked{color:var(--red)}.act .del:hover{color:var(--red)}
+input.f{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;outline:0;width:100%}
+input.f:focus,.row input:focus{border-color:var(--green)}
+.right{padding:16px;position:sticky;top:0;height:100vh}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:14px}
+.card h3{margin-bottom:6px}.card p{color:var(--mute);font-size:15px}
+.user{display:flex;align-items:center;gap:10px;margin-top:auto;padding:10px;border-radius:999px;background:var(--panel)}
+.user span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#auth{position:fixed;inset:0;background:radial-gradient(circle at 20% 10%,#d6f2e3 0,var(--bg) 60%);display:grid;place-items:center;z-index:20;padding:16px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:32px;width:100%;max-width:400px;display:grid;gap:12px}
+.box h1{font-size:30px}.box p{color:var(--mute)}
+.err{color:var(--red);font-size:14px;min-height:18px}
+.empty{padding:40px 18px;text-align:center;color:var(--mute)}
+.credit{font-size:14px;color:var(--mute);text-align:center;margin-top:8px}
+.hide{display:none!important}
+@media(max-width:1000px){.app{grid-template-columns:76px minmax(0,1fr)}.right{display:none}.nav span,.brand span,.user span{display:none}.nav{padding:12px;text-align:center}}
+.mtop,.mnav{display:none}
+#filterBar{display:flex;align-items:center;gap:10px;padding:10px 18px;border-bottom:1px solid var(--line);color:var(--green)}
+#filterBar .btn{margin-left:auto;padding:4px 14px}
+button{touch-action:manipulation}*{-webkit-tap-highlight-color:transparent}
+@media(max-width:700px){
+.app{grid-template-columns:1fr;padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
+aside{display:none}main{border:0}
+.mtop{display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:8;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);padding:8px 14px;padding-top:calc(8px + env(safe-area-inset-top,0px));border-bottom:1px solid var(--line);font-weight:800;font-size:20px}
+.mtop .logo,.mtop img{width:32px;height:32px;border-radius:9px;object-fit:cover;background:var(--green);display:grid;place-items:center;font-size:18px}
+.mtop .btn{margin-left:auto;padding:6px 14px;min-height:36px}
+.mnav{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;position:fixed;bottom:0;left:0;right:0;z-index:9;background:var(--panel);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.mnav button{background:none;border:0;color:var(--mute);padding:8px 2px;min-height:58px;font-size:11px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer}
+.mnav button b{font-size:22px;line-height:1}.mnav button.on{color:var(--green);background:var(--panel2)}
+.top{position:static}
+.btn{min-height:44px}input.f{min-height:46px}
+.compose{padding:12px 14px}.post{padding:14px}
+.row .btn{flex:1}.file{padding:8px 4px}
+.act{justify-content:space-between;gap:8px}.act button{min-height:44px;padding:0 8px}
+.box{padding:24px}
+.cform .btn{min-height:44px}
+#dmForm{bottom:calc(58px + env(safe-area-inset-bottom,0px))}
+.bub{max-width:85%}
+}
+.cms{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}.cmt{padding:6px 0;font-size:15px}.cform{display:flex;gap:8px;margin-top:8px}.cform .btn{padding:8px 16px}
+.pbanner{padding:24px 18px;border-bottom:1px solid var(--line);display:grid;gap:10px}.pbanner .av{width:72px;height:72px;font-size:30px}
+.pbanner textarea{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;width:100%;min-height:70px;outline:0;resize:none}
+.bub{max-width:78%;padding:8px 14px;border-radius:18px;background:var(--panel2);margin:6px 18px;width:fit-content;white-space:pre-wrap;word-wrap:break-word}
+.bub.mine{background:var(--green2);margin-left:auto}.bub small{display:block;color:var(--mute);font-size:11px}.bub.mine small{color:#d4f5ea}
+#dmMsgs{padding:10px 0 20px;min-height:50vh}
+.dmu{display:flex;gap:12px;align-items:center;width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:12px 18px;cursor:pointer;text-align:left}.dmu:hover{background:#f0f9f4}
+#dmForm{position:sticky;bottom:0;background:var(--bg);padding:12px 18px;border-top:1px solid var(--line)}
+.media{position:relative;line-height:0}.media img{width:100%;border-radius:16px;border:1px solid var(--line);max-height:520px;object-fit:cover}
+.heart{position:absolute;left:50%;top:50%;font-size:96px;color:#fff;transform:translate(-50%,-50%) scale(0);opacity:0;pointer-events:none;text-shadow:0 4px 24px rgba(0,0,0,.45)}
+.heart.pop{animation:pop .8s ease}@keyframes pop{0%{transform:translate(-50%,-50%) scale(0);opacity:1}30%{transform:translate(-50%,-50%) scale(1.25);opacity:1}100%{transform:translate(-50%,-50%) scale(1);opacity:0}}
+.stories{display:flex;gap:14px;overflow-x:auto;padding:14px 18px;border-bottom:1px solid var(--line);scrollbar-width:none}
+.story{background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:68px;cursor:pointer;color:var(--text)}
+.story small{font-size:12px;max-width:68px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ring{padding:3px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--blue),#7be3b9)}.ring.add{background:var(--line)}
+.ring .av{width:58px;height:58px;border:3px solid var(--bg)}
+#sview{position:fixed;inset:0;background:#000;z-index:50;display:grid;place-items:center}
+#sbody{width:100%;height:100%;display:grid;place-items:center;position:relative}
+#sview img,#sview video{max-width:100vw;max-height:100vh;object-fit:contain}
+.sname{position:absolute;top:calc(18px + env(safe-area-inset-top,0px));left:16px;color:#fff;font-weight:700;text-shadow:0 2px 8px #000}
+#sclose{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:14px;z-index:2;background:rgba(0,0,0,.5);border:0;color:#fff;font-size:22px;width:44px;height:44px;border-radius:50%;cursor:pointer}
+.av{position:relative}.dot{position:absolute;right:-1px;bottom:-1px;width:13px;height:13px;border-radius:50%;background:#42565e;border:2px solid var(--bg)}.dot.on{background:#3ddc97}
+#ann{padding:12px 18px;background:linear-gradient(90deg,var(--blue),var(--green2));font-weight:600}
+#maint,#warn,#pmodal{position:fixed;inset:0;z-index:60;background:rgba(255,255,255,.96);display:grid;place-items:center;padding:16px}
+.btn.s{padding:4px 12px;min-height:34px;font-size:14px}.btn.rec{background:var(--red);color:#fff}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;padding:18px}
+.vgrid video{width:100%;aspect-ratio:16/9;border-radius:14px;background:#000}
+.live{padding:14px 18px;background:linear-gradient(120deg,#e3f6ec,#cdeedd);border-bottom:1px solid var(--line)}.live b.sc{font-size:28px;letter-spacing:1px}
+.fx{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line)}
+.fx .d{min-width:62px;text-align:center;color:var(--green);font-weight:700;line-height:1.2}
+#nextMatch{padding:10px 18px;background:var(--panel2);border-bottom:1px solid var(--line);font-weight:600}
+.rpick{position:fixed;z-index:70;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 10px;display:flex;gap:6px;box-shadow:0 6px 24px rgba(0,0,0,.4)}
+.rpick button{background:none;border:0;font-size:24px;cursor:pointer;padding:2px 4px}
+.poll{margin:8px 0;display:grid;gap:6px}
+.poll button,.poll .opt{position:relative;text-align:left;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;overflow:hidden;color:var(--text);cursor:pointer}
+.poll .opt{cursor:default}.poll .fill{position:absolute;left:0;top:0;bottom:0;background:rgba(34,185,138,.28)}.poll span{position:relative}
+#lcMsgs{max-height:300px;overflow-y:auto;padding:10px 18px}.lc{padding:3px 0;font-size:15px;word-break:break-word}.lc b{color:var(--green)}
+#nbadge,#nbadge2{color:var(--red);font-weight:800}
+.nt{display:flex;gap:10px;padding:12px 18px;border-bottom:1px solid var(--line)}.nt.un{background:rgba(34,185,138,.10)}
+.tb{width:100%;border-collapse:collapse;font-size:14px}.tb th,.tb td{padding:7px 6px;text-align:center;border-bottom:1px solid var(--line)}.tb td:nth-child(2),.tb th:nth-child(2){text-align:left}.tb tr.me td{color:var(--green);font-weight:700}
+.pr input{width:58px;display:inline-block;min-height:34px;padding:2px 6px}
+.sbar{position:absolute;bottom:calc(22px + env(safe-area-inset-bottom,0px));left:0;right:0;display:flex;justify-content:center;gap:8px;z-index:3;flex-wrap:wrap}
+.sbar button{background:rgba(0,0,0,.55);border:0;border-radius:999px;font-size:26px;padding:6px 10px;cursor:pointer}.sbar span{color:#fff;background:rgba(0,0,0,.55);padding:6px 14px;border-radius:999px}
+.emo{display:flex;gap:2px;flex-wrap:wrap}.emo button{background:none;border:0;font-size:22px;cursor:pointer;padding:2px 4px}
+#offline{position:fixed;top:0;left:0;right:0;z-index:80;background:var(--red);color:#fff;text-align:center;padding:6px;font-weight:700}
+.fall{position:fixed;top:-30px;font-size:26px;z-index:90;pointer-events:none;animation:fall 2.4s linear forwards}
+@keyframes fall{to{transform:translateY(112vh) rotate(540deg);opacity:.85}}
+.ub{background:var(--red);color:#fff;border-radius:999px;padding:1px 8px;font-size:13px;margin-left:auto}
+#mbadge,#mbadge2{color:var(--red);font-style:normal;font-weight:800}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:4px;padding:8px 12px}.gal img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;cursor:pointer;background:var(--panel2)}
+.hubg{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:14px 18px}
+.hubc{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 8px;font-size:15px;text-align:center;cursor:pointer;color:var(--text)}.hubc b{display:block;font-size:32px;margin-bottom:4px}
+.hubc:hover{border-color:var(--green)}
+.bars{display:flex;align-items:flex-end;gap:8px;height:130px;padding:20px 0 22px}
+.bar{flex:1;background:linear-gradient(var(--green),#16906a);border-radius:6px 6px 0 0;position:relative;min-height:3px}
+.bar i{position:absolute;top:-18px;left:0;right:0;text-align:center;font-style:normal;font-size:12px}.bar small{position:absolute;bottom:-20px;left:0;right:0;text-align:center;color:var(--mute);font-size:11px}
+.lvbar{height:10px;background:var(--panel2);border-radius:99px;overflow:hidden;margin-top:6px}.lvbar i{display:block;height:100%;background:var(--green)}
+.av,.logo{color:#fff}#ann{color:#fff}
+:root[data-theme="dark"]{--bg:#0c1713;--panel:#13251d;--panel2:#193327;--line:#24483a;--text:#e8f5ee;--mute:#8fb0a0;--green:#2fd08d;--green2:#1aa56b;--blue:#2fd08d}
+:root[data-theme="dark"] .top,:root[data-theme="dark"] .mtop{background:rgba(12,23,19,.92)}
+:root[data-theme="dark"] .post:hover,:root[data-theme="dark"] .dmu:hover{background:#12241c}
+:root[data-theme="dark"] #maint,:root[data-theme="dark"] #warn,:root[data-theme="dark"] #pmodal{background:rgba(5,12,9,.95)}
+:root[data-theme="dark"] .live{background:linear-gradient(120deg,#12362a,#0f2a20)}
+:root[data-theme="dark"] .btn{color:#04150d}:root[data-theme="dark"] .btn.ghost{color:var(--text)}
+:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+</style>
 </head>
 <body>
-  <main class="shell">
-    <header class="topbar">
-      <div class="brand"><div class="mark">H</div><span>HAMZASTUDIOS2X</span></div>
-      <div class="status">● Sistem yenileniyor</div>
-    </header>
 
-    <section class="card">
-      <div class="eyebrow">Yeni bir dönem hazırlanıyor</div>
-      <h1>Çok yakında.<br><span>Her şey değişiyor.</span></h1>
-      <p class="lead">
-        Sitemiz şu anda kapsamlı bir yeniden yapılanma ve tasarım sürecinde.
-        Bu nedenle siteye geçici olarak erişilemiyor. Altyapımızı, görünümümüzü
-        ve çalışmalarımızı baştan sona yeniliyoruz.
-      </p>
+<!-- GİRİŞ / KAYIT -->
+<div id="auth">
+  <form class="box" id="authForm">
+    <div class="brand" style="padding:0"><span class="logo" data-logo>▶</span><span>İzleHub</span></div>
+    <h1 id="authTitle">Giriş yap</h1>
+    <p>İzle, paylaş, keşfet.</p>
+    <input class="f hide" id="uname" placeholder="Kullanıcı adı" maxlength="24" autocomplete="username">
+    <input class="f" id="email" type="text" placeholder="Kullanıcı adı veya e-posta" autocomplete="username">
+    <input class="f" id="pass" type="password" placeholder="Şifre (en az 6 karakter)" required minlength="6" autocomplete="current-password">
+    <div class="err" id="err"></div>
+    <button class="btn" id="authBtn">Giriş yap</button>
+    <button class="btn ghost" type="button" id="toggle">Hesabın yok mu? Kayıt ol</button>
+    <button class="btn ghost" type="button" id="google">Google ile devam et</button>
+    <button class="btn ghost" type="button" id="guest">Hesapsız devam et (misafir)</button>
+    <button class="btn ghost hide" type="button" id="forgot">Şifremi unuttum</button>
+    <div class="credit">HamzaStudios tarafından yapılmıştır</div>
+  </form>
+</div>
 
-      <div class="rule"></div>
+<!-- UYGULAMA -->
+<div class="app" id="app">
+  <aside>
+    <div class="brand"><span class="logo" data-logo>▶</span><span>İzleHub</span></div>
+    <button class="nav on" data-view="home">🏠 <span>Ana Sayfa</span></button>
+    <button class="nav" data-view="hub">🧰 <span>Araçlar</span></button>
+    <button class="nav" data-view="notifs">🔔 <span>Bildirimler<b id="nbadge2"></b></span></button>
+    <button class="nav" data-view="videos">🎬 <span>İzle</span></button>
+    <button class="nav" data-view="messages">💬 <span>Mesajlar<b id="mbadge2"></b></span></button>
+    <button class="nav" data-view="profile">👤 <span>Profil</span></button>
+    <div class="user"><div class="av" id="meAv" style="width:36px;height:36px"></div><span id="meName"></span><button class="btn ghost" id="theme" title="Tema" style="padding:6px 10px">🌓</button><button class="btn ghost" id="out" title="Çıkış" style="padding:6px 12px">↩</button></div>
+  </aside>
 
-      <div class="eyebrow">Önemli duyuru · Orkidespor</div>
-      <h2 style="font-size:clamp(21px,3vw,28px);letter-spacing:-.03em;margin:12px 0">
-        İş birliği hakkında değerlendirme süreci
-      </h2>
-      <p class="lead" style="font-size:15px">
-        HamzaStudios2x ve Orkidespor arasında yaşanan anlaşmazlıkların ardından
-        iş birliğinin sona erdirilmesi gündeme gelmiştir. Bu konuda bir karar
-        değerlendirilmekte olup süreç henüz kesinleşmemiştir.
-      </p>
-
-      <div class="notice">
-        <div class="notice-icon">i</div>
-        <div>
-          <strong>Henüz imzalanmış veya kesinleşmiş bir karar yok.</strong>
-          <p>İş birliğinin devam edip etmeyeceği şu an için belirsizdir. Resmî ve kesin bir açıklama yapılana kadar iş birliğinin sona erdiği duyurulmamaktadır.</p>
+  <main>
+    <header class="mtop"><span class="logo" data-logo>▶</span><span>İzleHub</span><button class="btn ghost s" data-view="hub" style="margin-left:auto">🧰</button><button class="btn ghost s" data-view="notifs" style="margin-left:6px">🔔<b id="nbadge"></b></button><button class="btn ghost s" id="theme2" style="margin-left:6px">🌓</button><button class="btn ghost" id="out2" style="margin-left:6px">Çıkış</button></header>
+    <section id="home">
+      <div class="top">Ana Sayfa</div>
+      <div id="ann" class="hide"></div>
+      <div id="weekBest" class="hide" style="padding:10px 18px;border-bottom:1px solid var(--line);cursor:pointer"></div>
+      <div id="stories" class="stories"></div>
+      <div class="compose hide" id="guestNote"><div class="meta" style="flex:1">Misafir olarak giriş yaptın, gönderileri okuyabilirsin. Paylaşım yapmak için hesap oluştur.</div><button class="btn" id="guestOut">Hesap oluştur</button></div>
+      <div class="compose" id="composeBox">
+        <div class="av" id="cAv"></div>
+        <div style="flex:1">
+          <textarea id="text" maxlength="280" placeholder="Neler oluyor?"></textarea>
+          <div class="emo" id="emoBar"><button type="button">😍</button><button type="button">🔥</button><button type="button">👏</button><button type="button">😂</button><button type="button">❤️</button><button type="button">💪</button><button type="button">🏆</button><button type="button">🙌</button></div>
+          <video id="prev" controls class="hide" style="margin-top:8px"></video>
+          <img id="prevImg" class="hide" alt="" style="margin-top:8px;border-radius:16px;max-width:100%">
+          <div id="pollChip" class="hide meta" style="margin-top:8px"></div>
+          <div class="row">
+            <label class="file">📷 Foto / Video<input type="file" id="vfile" accept="image/*,video/*" hidden></label>
+            <button type="button" class="btn ghost s" id="pollBtn">📊 Anket</button>
+            <select class="f" id="cat" style="width:auto;min-height:38px;padding:4px 10px"><option value="">Kategori</option><option>Eğlence</option><option>Haber</option><option>Video</option><option>Müzik</option><option>Oyun</option><option>Teknoloji</option></select>
+            <input type="url" id="vurl" placeholder="veya video / YouTube bağlantısı">
+            <span class="meta" id="cnt">0/280</span>
+            <button class="btn" id="send">Gönder</button>
+          </div>
+          <div class="err" id="perr"></div>
         </div>
       </div>
-
-      <p class="sorry">Bu geçiş sürecinde yaşanan erişim kesintisi için üzgünüz. Anlayışınız için teşekkür ederiz.</p>
+      <div id="catBar" class="acts" style="padding:8px 18px;gap:6px"><button class="btn s" data-cat="">Hepsi</button><button class="btn ghost s" data-cat="Eğlence">Eğlence</button><button class="btn ghost s" data-cat="Haber">Haber</button><button class="btn ghost s" data-cat="Video">Video</button><button class="btn ghost s" data-cat="Müzik">Müzik</button><button class="btn ghost s" data-cat="Oyun">Oyun</button><button class="btn ghost s" data-cat="Teknoloji">Teknoloji</button><button class="btn ghost s" data-weekly style="margin-left:auto">📰 Haftalık özet</button></div>
+      <div id="filterBar" class="hide"><span id="filterText"></span><button class="btn ghost" id="filterClear">✕ Temizle</button></div>
+      <div id="feed"><div class="empty">Yükleniyor…</div></div>
     </section>
 
-    <footer>
-      <span>© 2026 HamzaStudios2x</span>
-      <span>Büyük güncelleme ve yeniden yapılanma süreci</span>
-    </footer>
+    <section id="hub" class="hide"><div class="top">🧰 Araçlar</div><div id="hubBody"></div></section>
+
+    <section id="notifs" class="hide"><div class="top">Bildirimler</div><div class="acts" style="padding:10px 18px"><button class="btn ghost s" id="nperm">🔔 Tarayıcı bildirimi aç</button><button class="btn ghost s" id="nclear">Hepsini temizle</button></div><div id="nlist"></div></section>
+
+    <section id="videos" class="hide"><div class="top">İzle</div><div class="vgrid" id="vgrid"></div>
+      <div class="top" style="position:static">📷 Fotoğraflar</div>
+      <div class="gal" id="gal"></div></section>
+
+    <section id="find" class="hide">
+      <div class="top">Ara</div>
+      <div style="padding:12px 18px"><input class="f" id="search2" placeholder="Gönderi veya kişi ara"></div>
+      <div id="findPeople"></div>
+      <div style="padding:0 18px 8px"><h3>Gündem</h3><div id="trends2"></div></div>
+      <div id="findFeed"></div>
+    </section>
+
+    <section id="messages" class="hide">
+      <div id="dmList">
+        <div class="top">Mesajlar</div>
+        <div style="padding:12px 18px"><input class="f" id="dmSearch" placeholder="Kişi ara" autocomplete="off"></div>
+        <div id="dmUsers"></div>
+      </div>
+      <div id="dmChat" class="hide">
+        <div class="top"><button class="btn ghost" id="dmBack" style="padding:4px 12px;margin-right:8px">←</button><span id="dmWith"></span></div>
+        <div id="dmMsgs"></div>
+        <div id="dmTyping" class="meta hide" style="padding:0 18px 8px">yazıyor…</div>
+        <div id="dmSeen" class="meta hide" style="padding:0 18px 8px;text-align:right">✓✓ Görüldü</div>
+        <form id="dmForm" class="cform"><input class="f" id="dmText" maxlength="500" placeholder="Mesaj yaz…" required autocomplete="off"><button type="button" class="btn ghost" id="dmMic" title="Sesli mesaj">🎤</button><button class="btn">Gönder</button></form>
+      </div>
+    </section>
+
+    <section id="profile" class="hide">
+      <div class="top">Profil</div>
+      <div class="pbanner">
+        <div class="av" id="pAv"></div>
+        <div><b style="font-size:22px" id="pName"></b><div class="meta" id="pcount"></div><div id="badges" style="margin-top:6px"></div></div>
+        <textarea id="bio" maxlength="160" placeholder="Kendini kısaca tanıt (en fazla 160 karakter)"></textarea>
+        <div class="row" style="margin:0"><button class="btn" id="saveBio">Kaydet</button><span class="meta" id="bioMsg"></span></div>
+        <div class="row" style="margin:0"><span class="meta">Yazı boyutu</span><button class="btn ghost s" data-fs="-1">A−</button><button class="btn ghost s" data-fs="1">A+</button></div>
+        <button class="btn ghost s hide" id="install" style="justify-self:start">📲 Uygulamayı yükle</button>
+      </div>
+      <div id="myfeed"></div>
+      <div class="top" style="position:static">🔖 Kaydedilenler</div>
+      <div id="savedFeed"></div>
+    </section>
   </main>
+
+  <div class="right">
+    <div class="card"><input class="f" id="search" placeholder="Gönderi veya kişi ara"></div>
+    <div class="card"><h3>Gündem</h3><div id="trends"><p>Henüz etiket yok.</p></div></div>
+    <div class="card"><h3>İzleHub</h3><p>Videoları izle, fotoğraf ve düşüncelerini paylaş, arkadaşlarınla sohbet et, yeni insanlar keşfet.</p></div>
+    <div class="card"><p>Bu site <b style="color:var(--green)">HamzaStudios</b> tarafından yapılmıştır.</p></div>
+  </div>
+</div>
+
+<div id="offline" class="hide">⚠️ İnternet bağlantısı yok</div>
+<div id="pmodal" class="hide"><div class="box" id="pbox" style="text-align:center"></div></div>
+<div id="maint" class="hide"><div class="box"><h2>🛠️ Bakım</h2><p id="maintMsg"></p></div></div>
+<div id="warn" class="hide"><div class="box"><h2>⚠️ Yönetici uyarısı</h2><div id="warnText"></div><button class="btn" id="warnOk">Anladım</button></div></div>
+<div id="sview" class="hide"><button id="sclose">✕</button><div id="sbody"></div></div>
+<input type="file" id="sfile" accept="image/*" hidden>
+<nav class="mnav hide" id="mnav">
+  <button data-view="home" class="on"><b>🏠</b>Ana Sayfa</button>
+  <button data-view="videos"><b>🎬</b>İzle</button>
+  <button data-view="messages"><b>💬</b>Mesajlar<em id="mbadge"></em></button>
+  <button data-view="find"><b>🔍</b>Ara</button>
+  <button data-view="profile"><b>👤</b>Profil</button>
+</nav>
+
+<script type="module">
+/* ============ AYARLAR ============ */
+//    - Logo: deponun ana klasörüne "logo" adıyla koy (logo.png, logo.jpg ... uzantı fark etmez)
+// Eski hesaplar (ilk sürümde açılmış kullanıcı adlı hesaplar) için giriş yedeği. Eski hesap kalmadığında bu satırı ve OLD_DOMAIN kullanımını silebilirsin.
+const OLD_DOMAIN = "@orkidespor.app";
+const GITHUB_REPO = "orkideaagra-sys/orkidespor-sitesi";
+const GH_DIR = "VERİLER,VİDEOLAR.MESAJLKAR. OZEL BİLGİLER";   // "Videolar" sekmesi bu depo klasöründeki videoları gösterir
+const UPLOAD_URL = "https://orkide-upload.orkideaagra.workers.dev";   // Video yükleme aracısının (Cloudflare Worker) adresi. Kurulumdan sonra buraya yaz.
+const PHOTO_DIR = "";
+
+const ADMIN_EMAILS = ["senin@mail.com"];
+
+// 2) Firebase konsolundan aldığın ayarları buraya yaz
+const firebaseConfig = {
+  apiKey: "AIzaSyB1v4gDe2WNfL-ZkQBA7ytwdSZXwvGQMVA",
+  authDomain: "project-2144054113632047131.firebaseapp.com",
+  databaseURL: "https://project-2144054113632047131-default-rtdb.firebaseio.com",
+  projectId: "project-2144054113632047131",
+  storageBucket: "project-2144054113632047131.firebasestorage.app",
+  messagingSenderId: "552024282910",
+  appId: "1:552024282910:web:18125f36ebf43e6a345b0f",
+  measurementId: "G-K26JX8HDSM"
+};
+/* ================================== */
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile, sendPasswordResetEmail, signInAnonymously, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getDatabase, ref as dref, push, set, remove, onValue, get, runTransaction, serverTimestamp, update, onDisconnect, query, limitToLast } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* GitHub depo dosyalarını oku (logo) */
+const IMG_EXT = /\.(png|jpe?g|jpe|jfif|pjp|gif|webp|svg|avif|bmp|ico|apng)$/i;
+const noExt = n => n.replace(/\.[^.]+$/, "");
+const nkey = t => t.toLocaleLowerCase("tr").replace(/ı/g, "i").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
+const fileUrl = (dir, name) => (dir ? dir.split("/").map(encodeURIComponent).join("/") + "/" : "") + encodeURIComponent(name);
+async function listRepo(path) {
+  const ck = "izlehub_gh_" + path;
+  try { const c = JSON.parse(sessionStorage.getItem(ck)); if (c && Date.now() - c.t < 600000) return c.d; } catch {}
+  const r = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents${path ? "/" + path.split("/").map(encodeURIComponent).join("/") : ""}`);
+  if (!r.ok) throw new Error(r.status);
+  const d = (await r.json()).filter(f => f.type === "file").map(f => f.name);
+  try { sessionStorage.setItem(ck, JSON.stringify({ t: Date.now(), d })); } catch {}
+  return d;
+}
+listRepo("").then(files => {
+  const lf = files.find(n => /^logo\./i.test(n) && IMG_EXT.test(n)); if (!lf) return;
+  const url = fileUrl("", lf);
+  document.querySelectorAll("[data-logo]").forEach(el => { const i = document.createElement("img"); i.src = url; i.alt = "İzleHub"; el.replaceWith(i); });
+  const ic = document.createElement("link"); ic.rel = "icon"; ic.href = url; document.head.appendChild(ic);
+}).catch(() => {});
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app), db = getDatabase(app), storage = getStorage(app);
+
+/* Oturum süresi: 6 gün sonra tekrar giriş istenir */
+const LOGIN_KEY = "izlehub_login_at", SESSION_MS = 6 * 24 * 3600 * 1000;
+const stamp = () => { try { localStorage.setItem(LOGIN_KEY, String(Date.now())); } catch {} };
+const stamped = () => { try { return +localStorage.getItem(LOGIN_KEY) || 0; } catch { return 0; } };
+const nameOf = u => u.displayName || (u.email ? u.email.split("@")[0] : "Misafir");
+
+/* ---------- Giriş / Kayıt ---------- */
+let register = false;
+const setMode = r => {
+  register = r;
+  $("#authTitle").textContent = r ? "Hesap oluştur" : "Giriş yap";
+  $("#authBtn").textContent = r ? "Kayıt ol" : "Giriş yap";
+  $("#toggle").textContent = r ? "Zaten hesabın var mı? Giriş yap" : "Hesabın yok mu? Kayıt ol";
+  $("#uname").classList.toggle("hide", !r);
+  $("#email").classList.toggle("hide", r);
+  $("#forgot").classList.toggle("hide", r);
+  $("#err").textContent = "";
+};
+setMode(false); $("#forgot").classList.remove("hide");
+$("#toggle").onclick = () => setMode(!register);
+const trErr = e => ({
+  "auth/invalid-credential":"Kullanıcı adı / e-posta veya şifre hatalı.","auth/email-already-in-use":"Bu kullanıcı adı alınmış, başka bir tane dene.",
+  "auth/weak-password":"Şifre en az 6 karakter olmalı.","auth/invalid-email":"Kullanıcı adı veya e-posta geçersiz.",
+  "auth/admin-restricted-operation":"Bu giriş yöntemi veya kayıt Firebase'de kapalı. Authentication ayarlarını kontrol et.","auth/too-many-requests":"Çok fazla deneme. Biraz bekleyip tekrar dene.","auth/network-request-failed":"İnternet bağlantını kontrol et."
+}[e.code] || "Bir hata oluştu: " + (e.code || e.message));
+$("#authForm").onsubmit = async ev => {
+  ev.preventDefault(); $("#err").textContent = ""; $("#authBtn").disabled = true;
+  try {
+    const raw = $("#email").value.trim(), pw = $("#pass").value; stamp();
+    if (register) {
+      const name = $("#uname").value.trim(); if (!name) throw {code:"", message:"Kullanıcı adı yaz."};
+      if (settings.regOff) throw {code:"", message:"Yeni kayıtlar geçici olarak kapalı."};
+      const k = nkey(name); if (!k) throw {code:"", message:"Kullanıcı adında harf veya rakam olmalı."};
+      const c = await createUserWithEmailAndPassword(auth, k + "@izlehub.app", pw);
+      await updateProfile(c.user, { displayName: name });
+      location.reload();
+    } else {
+      if (!raw) throw {code:"", message:"Kullanıcı adını veya e-postanı yaz."};
+      if (raw.includes("@")) await signInWithEmailAndPassword(auth, raw, pw);
+      else {
+        try { await signInWithEmailAndPassword(auth, nkey(raw) + "@izlehub.app", pw); }
+        catch (e1) {
+          if (e1.code !== "auth/invalid-credential" && e1.code !== "auth/user-not-found") throw e1;
+          await signInWithEmailAndPassword(auth, nkey(raw) + OLD_DOMAIN, pw).catch(() => { throw e1; });
+        }
+      }
+    }
+  } catch (e) { $("#err").textContent = e.code ? trErr(e) : e.message; }
+  $("#authBtn").disabled = false;
+};
+$("#forgot").onclick = async () => {
+  const em = $("#email").value.trim(); if (!em.includes("@")) { $("#err").style.color = ""; $("#err").textContent = "Şifre sıfırlama sadece e-postayla kayıt olanlar için. E-posta adresini yaz."; return; }
+  try { await sendPasswordResetEmail(auth, em); $("#err").style.color = "var(--green)"; $("#err").textContent = "Şifre sıfırlama bağlantısı gönderildi."; }
+  catch (e) { $("#err").style.color = ""; $("#err").textContent = trErr(e); }
+};
+const doOut = () => (me && !isGuest ? set(dref(db, "presence/" + me.uid), false).catch(() => {}) : Promise.resolve()).finally(() => signOut(auth));
+$("#out").onclick = doOut; $("#out2").onclick = doOut;
+$("#google").onclick = async () => {
+  $("#err").style.color = ""; $("#err").textContent = "";
+  try { stamp(); await signInWithPopup(auth, new GoogleAuthProvider()); }
+  catch (e) { $("#err").textContent = e.code === "auth/popup-closed-by-user" ? "" : (e.code === "auth/operation-not-allowed" ? "Google girişi kapalı. Firebase'de Authentication → Sign-in method → Google'ı aç." : trErr(e)); }
+};
+$("#guest").onclick = async () => {
+  $("#err").style.color = ""; $("#err").textContent = "";
+  try { stamp(); await signInAnonymously(auth); }
+  catch (e) { $("#err").textContent = (e.code === "auth/operation-not-allowed" || e.code === "auth/admin-restricted-operation") ? "Misafir girişi kapalı. Firebase'de Authentication → Sign-in method → Anonymous'u aç." : trErr(e); }
+};
+$("#guestOut").onclick = () => signOut(auth).then(() => setMode(true));
+
+/* ---------- Oturum ---------- */
+let me = null, isAdmin = false, isGuest = false, unsubPosts, unsubPlayers, unsubUsers, chatUnsub, unsubStories, unsubConn, unsubBan, unsubAnn, unsubWarn, unsubBlocks;
+onAuthStateChanged(auth, u => {
+  if (u) {
+    const t = stamped();
+    if (!t) stamp();
+    else if (Date.now() - t > SESSION_MS) {
+      signOut(auth); $("#err").style.color = ""; $("#err").textContent = "Oturum süren doldu (6 gün). Lütfen tekrar giriş yap."; return;
+    }
+  }
+  me = u; adminFlag = false; applySettings();
+  if (u) get(dref(db, "admins/" + u.uid)).then(a => { adminFlag = a.val() === true; applySettings(); }).catch(() => {});
+  $("#auth").classList.toggle("hide", !!u);
+  $("#app").classList.toggle("hide", !u);
+  $("#mnav").classList.toggle("hide", !u);
+  unsubPosts?.(); unsubPlayers?.(); unsubUsers?.(); chatUnsub?.(); unsubStories?.(); unsubConn?.(); unsubBan?.(); unsubAnn?.(); unsubWarn?.(); unsubBlocks?.(); extraUnsubs.forEach(f => f()); extraUnsubs = [];
+  if (!u) return;
+  const n = nameOf(u);
+  $("#meName").textContent = n; $("#meAv").textContent = $("#cAv").textContent = n[0].toUpperCase();
+  isGuest = u.isAnonymous;
+  $("#composeBox").classList.toggle("hide", isGuest);
+  $("#guestNote").classList.toggle("hide", !isGuest);
+  document.querySelectorAll('[data-view="profile"]').forEach(x => x.classList.toggle("hide", isGuest));
+  document.querySelectorAll('[data-view="messages"]').forEach(x => x.classList.toggle("hide", isGuest));
+  document.querySelectorAll('[data-view="notifs"]').forEach(x => x.classList.toggle("hide", isGuest));
+  document.querySelector('[data-view="messages"]').classList.toggle("hide", isGuest);
+  isAdmin = ADMIN_EMAILS.map(x => x.toLowerCase()).includes((u.email || "").toLowerCase());
+  $("#pName").textContent = n; $("#pAv").textContent = n[0].toUpperCase();
+  get(dref(db, "users/" + u.uid)).then(d => $("#bio").value = d.exists() ? (d.val().bio || "") : "").catch(() => {});
+  listenPosts(); listenStories(); listenAnn(); loadVideos(); listenExtras();
+  if (!isGuest) { update(dref(db, "users/" + u.uid), { name: n, last: serverTimestamp() }).catch(() => {});
+    runTransaction(dref(db, "users/" + u.uid + "/since"), v => v || Date.now()).catch(() => {});
+    bumpStreak(); listenUsers();
+    unsubBan = onValue(dref(db, "bans/" + u.uid), b => applyBan(b.val()));
+    unsubBlocks = onValue(dref(db, "blocks/" + u.uid), s => { myBlocks = s.val() || {}; renderFeeds(); renderStories(); renderUsers(); });
+    unsubWarn = onValue(dref(db, "warnings/" + u.uid), w => {
+      const l = []; w.forEach(c => l.push(c.val()));
+      $("#warn").classList.toggle("hide", !l.length);
+      $("#warnText").innerHTML = l.map(x => `<p style="margin:8px 0">${esc(x.text)}<br><small class="meta">${esc(x.by || "Yönetici")} · ${ago(x.at)}</small></p>`).join("");
+    });
+    if (u.email && !u.email.endsWith("@izlehub.app") && !u.email.endsWith(OLD_DOMAIN)) set(dref(db, "emails/" + u.uid), u.email).catch(() => {});
+    unsubConn = onValue(dref(db, ".info/connected"), c => { if (c.val()) { const pr = dref(db, "presence/" + u.uid); onDisconnect(pr).set(false); set(pr, true); } });
+  }
+});
+
+/* ---------- Gezinme ---------- */
+document.querySelectorAll("[data-view]").forEach(b => b.onclick = () => {
+  const v = b.dataset.view;
+  document.querySelectorAll("[data-view]").forEach(x => x.classList.toggle("on", x.dataset.view === v));
+  ["home", "videos", "messages", "find", "profile", "notifs", "hub"].forEach(id => $("#" + id).classList.toggle("hide", v !== id));
+  if (v === "home") setSearch("");
+  if (v === "notifs") setTimeout(markRead, 1500);
+  if (v === "hub") { hubTool = ""; renderHub(); }
+  window.scrollTo(0, 0);
+});
+
+/* ---------- Video ---------- */
+const ago = ts => {
+  if (!ts) return "şimdi"; const s = (Date.now() - ts) / 1000;
+  if (s < 60) return "şimdi"; if (s < 3600) return Math.floor(s/60) + " dk";
+  if (s < 86400) return Math.floor(s/3600) + " sa"; return new Date(ts).toLocaleDateString("tr-TR");
+};
+const videoHTML = url => {
+  if (!url) return "";
+  const y = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})/);
+  if (y) return `<iframe src="https://www.youtube.com/embed/${y[1]}" allowfullscreen loading="lazy"></iframe>`;
+  return `<video src="${esc(url)}" controls preload="metadata"></video>`;
+};
+let file = null;
+$("#vfile").onchange = e => {
+  file = e.target.files[0]; if (!file) return;
+  if (!file.type.startsWith("image") && (!UPLOAD_URL || !file.type.startsWith("video"))) { $("#perr").textContent = "Video için YouTube veya video bağlantısını yandaki kutuya yapıştır."; file = null; e.target.value = ""; return; }
+  if (file.type.startsWith("video") && file.size > 20 * 1024 * 1024) { $("#perr").textContent = "Video en fazla 20 MB olabilir."; file = null; e.target.value = ""; return; }
+  const isI = file.type.startsWith("image"), u = URL.createObjectURL(file);
+  $("#prevImg").src = u; $("#prevImg").classList.toggle("hide", !isI);
+  $("#prev").src = isI ? "" : u; $("#prev").classList.toggle("hide", isI); $("#perr").textContent = "";
+};
+$("#text").oninput = () => $("#cnt").textContent = $("#text").value.length + "/280";
+
+/* ---------- Gönderiler ---------- */
+$("#send").onclick = async () => {
+  if (isMuted()) return;
+  if (settings.postsOff && !adminFlag) return alert("Paylaşımlar geçici olarak kapalı.");
+  const text = $("#text").value.trim(), vurl = $("#vurl").value.trim();
+  if (badWord(text)) return alert("Yazında yasaklı bir kelime var, lütfen düzenle.");
+  if (slowLeft() > 0) return alert("Yavaş mod: " + slowLeft() + " saniye sonra tekrar paylaşabilirsin.");
+  if (!text && !file && !vurl && !pendingPoll) { $("#perr").textContent = "Bir şeyler yaz ya da video ekle."; return; }
+  $("#send").disabled = true; $("#perr").textContent = "";
+  try {
+    let videoUrl = vurl;
+    let mediaRef = "";
+    if (file && file.type.startsWith("image")) {
+      const mr = push(dref(db, "media")); mediaRef = mr.key;
+      await set(mr, { uid: me.uid, data: await compressImage(file) });
+    } else if (file) {
+      videoUrl = await uploadVideo(file);
+    }
+    const pr = await push(dref(db, "posts"), {
+      uid: me.uid, author: nameOf(me),
+      text, videoUrl, mediaRef, poll: pendingPoll || null, cat: $("#cat").value, mediaType: file ? (file.type.startsWith("image") ? "image" : "video") : (vurl ? (IMG_EXT.test(vurl.split("?")[0]) ? "image" : "video") : ""), createdAt: serverTimestamp()
+    });
+    notifyMentions(text, pr.key);
+    if (file && file.type.startsWith("video")) alert("Videon yüklendi. GitHub'ın yayına alması 1-2 dakika sürer, o zamana kadar oynatılamayabilir.");
+    try { localStorage.setItem("izlehub_last_post", String(Date.now())); localStorage.removeItem("izlehub_draft"); } catch {}
+    $("#text").value = ""; $("#vurl").value = ""; $("#vfile").value = ""; file = null;
+    $("#prev").classList.add("hide"); $("#prevImg").classList.add("hide"); pendingPoll = null; $("#pollChip").classList.add("hide"); $("#cnt").textContent = "0/280";
+  } catch (e) { $("#perr").textContent = "Gönderilemedi: " + (e.code || e.message); }
+  $("#send").disabled = false; $("#send").textContent = "Gönder";
+};
+
+let allDocs = [], term = "";
+const openSet = new Set(), cache = {}, subs = {};
+const cmHTML = id => (cache[id] || []).filter(c => !myBlocks[c.uid]).map(c => `<div class="cmt"><b>${esc(c.author)}</b> <span class="meta">${ago(c.createdAt)}</span><div>${esc(c.text)}</div></div>`).join("")
+  + (isGuest ? "" : `<form class="cform" data-cf="${id}"><input class="f" maxlength="200" placeholder="Yanıt yaz…" required><button class="btn">Yanıtla</button></form>`);
+const paintCm = id => document.querySelectorAll(`[data-cm="${id}"]`).forEach(el => { el.classList.remove("hide"); el.innerHTML = cmHTML(id); });
+const mediaHTML = (p, id) => p.mediaType === "image" ? `<div class="media" data-dbl="${id}"><img ${p.mediaRef ? `data-mref="${esc(p.mediaRef)}"` : `src="${esc(p.videoUrl)}"`} alt="" loading="lazy"><span class="heart">♥</span></div>` : videoHTML(p.videoUrl);
+const linkTags = h => h.replace(/(^|\s)#([\p{L}_][\p{L}\p{N}_]*)/gu, '$1<a href="#" data-tag="$2">#$2</a>').replace(/(^|\s)@([\p{L}_][\p{L}\p{N}_]*)/gu, '$1<a href="#" data-author="$2">@$2</a>');
+const postHTML = d => {
+  const p = d.data(), liked = (p.likes || []).includes(me.uid), open = openSet.has(d.id);
+  return `<article class="post" id="post-${d.id}" data-pid="${d.id}" data-puid="${esc(p.uid)}"><div class="av">${esc((p.author || "?")[0].toUpperCase())}</div>
+    <div class="pb"><div class="meta"><b data-author="${esc(p.author)}" style="cursor:pointer">${esc(p.author)}</b>${verifiedMap[p.uid] ? " ✅" : ""} · ${ago(p.createdAt)}${p.edited ? " · düzenlendi" : ""}${p.cat ? ` <span class="b mod" style="background:var(--panel2);color:var(--text);margin:0">${esc(p.cat)}</span>` : ""}${settings.pinned === d.id ? " · 📌 Sabit" : ""}</div>
+    ${p.text ? `<div class="txt">${linkTags(esc(p.text))}</div>` : ""}${mediaHTML(p, d.id)}${p.poll ? pollHTML(p, d.id) : ""}
+    <div class="act"><button data-cbtn="${d.id}">💬 ${p.commentsCount || 0}</button>
+    <button data-share="${d.id}">📤</button>
+    ${!isGuest && p.uid !== me.uid ? `<button data-rep="${d.id}">🚩</button><button data-blk="${esc(p.uid)}">⛔</button>` : ""}
+    <button class="${liked ? "liked" : ""}" data-like="${d.id}" data-on="${liked}">${liked ? "♥" : "♡"} ${(p.likes || []).length}</button>
+    ${isGuest ? "" : `<button data-react="${d.id}">😊</button><button data-save="${d.id}">${mySaved[d.id] ? "📑" : "🔖"}</button>`}<small class="meta">${reactSum(p)}</small><small class="meta">👁 ${p.views || 0}</small>
+    ${p.uid === me.uid ? `<button data-edit="${d.id}">✏️</button><button class="del" data-del="${d.id}">Sil</button>` : ""}</div>
+    <div class="cms ${open ? "" : "hide"}" data-cm="${d.id}">${open ? cmHTML(d.id) : ""}</div></div></article>`;
+};
+function renderFeeds() {
+  const ok = d => { const p = d.data(); if (myBlocks[p.uid]) return false; if (catFilter && p.cat !== catFilter) return false; return !term || (p.text || "").toLowerCase().includes(term) || (p.author || "").toLowerCase().includes(term); };
+  const f = allDocs.filter(ok).sort((x, y) => (y.id === settings.pinned) - (x.id === settings.pinned)), mine = allDocs.filter(d => d.data().uid === me.uid);
+  $("#feed").innerHTML = f.length ? f.map(postHTML).join("") : `<div class="empty">${term ? "Aramayla eşleşen gönderi yok." : "Henüz gönderi yok. İlk gönderiyi sen paylaş."}</div>`;
+  $("#myfeed").innerHTML = mine.length ? mine.map(postHTML).join("") : '<div class="empty">Henüz gönderin yok.</div>';
+  const sd = allDocs.filter(d => mySaved[d.id]);
+  $("#savedFeed").innerHTML = sd.length ? sd.map(postHTML).join("") : '<div class="empty">Henüz kaydettiğin gönderi yok.</div>';
+  $("#pcount").textContent = mine.length + " gönderi";
+  $("#findFeed").innerHTML = term ? (f.length ? f.map(postHTML).join("") : '<div class="empty">Eşleşen gönderi yok.</div>') : '<div class="empty">Aramak için bir şey yaz.</div>';
+  $("#filterBar").classList.toggle("hide", !term); $("#filterText").textContent = "Filtre: " + term;
+  renderGallery(); hydrate(); renderPeople(); renderWeek(); openHash();
+  const cnt = {};
+  allDocs.forEach(d => ((d.data().text || "").match(/(?:^|\s)#[\p{L}_][\p{L}\p{N}_]*/gu) || []).forEach(t => { t = t.trim().toLowerCase(); cnt[t] = (cnt[t] || 0) + 1; }));
+  const top = Object.entries(cnt).sort((a, b) => b[1] - a[1]).slice(0, 5);
+  const th = top.length ? top.map(([t, n]) => `<div style="margin:6px 0"><a href="#" data-tag="${esc(t.slice(1))}">${esc(t)}</a> <span class="meta">${n} gönderi</span></div>`).join("") : "<p>Henüz etiket yok.</p>";
+  $("#trends").innerHTML = th; $("#trends2").innerHTML = th;
+}
+function listenPosts() {
+  unsubPosts = onValue(dref(db, "posts"), snap => {
+    const arr = [];
+    snap.forEach(c => { const v = c.val(); arr.push({ id: c.key, data: () => ({ ...v, likes: Object.keys(v.likes || {}), likeVals: v.likes || {} }) }); });
+    allDocs = arr.sort((x, y) => (y.data().createdAt || 0) - (x.data().createdAt || 0));
+    renderFeeds();
+  }, e => $("#feed").innerHTML = `<div class="empty">Gönderiler yüklenemedi (${esc(e.code)}). Realtime Database kurallarını kontrol et.</div>`);
+}
+const setSearch = v => { $("#search").value = v; $("#search2").value = v; term = v.trim().toLowerCase(); if (me) renderFeeds(); };
+$("#search").oninput = e => setSearch(e.target.value);
+$("#search2").oninput = e => setSearch(e.target.value);
+$("#filterClear").onclick = () => setSearch("");
+const feedClick = async e => {
+  const l = e.target.closest("[data-like]"), d = e.target.closest("[data-del]"), c = e.target.closest("[data-cbtn]");
+  if (l) { const r = dref(db, `posts/${l.dataset.like}/likes/${me.uid}`); if (l.dataset.on === "true") remove(r); else { set(r, true); notifyPost(l.dataset.like, "like", "gönderini beğendi"); } }
+  if (d && confirm("Bu gönderi silinsin mi?")) { const dd = allDocs.find(x => x.id === d.dataset.del); if (dd?.data().mediaRef) remove(dref(db, "media/" + dd.data().mediaRef)).catch(() => {}); remove(dref(db, "posts/" + d.dataset.del)); }
+  if (c) {
+    const id = c.dataset.cbtn;
+    if (openSet.has(id)) { openSet.delete(id); subs[id]?.(); document.querySelectorAll(`[data-cm="${id}"]`).forEach(el => el.classList.add("hide")); }
+    else {
+      openSet.add(id); paintCm(id);
+      subs[id] = onValue(dref(db, "comments/" + id), s => {
+        const a = []; s.forEach(x => a.push(x.val()));
+        cache[id] = a.sort((p, q) => (p.createdAt || 0) - (q.createdAt || 0)); paintCm(id);
+      });
+    }
+  }
+};
+$("#feed").onclick = feedClick; $("#myfeed").onclick = feedClick; $("#findFeed").onclick = feedClick; $("#savedFeed").onclick = feedClick;
+document.addEventListener("submit", async e => {
+  const f = e.target.closest("[data-cf]"); if (!f) return; e.preventDefault(); if (isMuted()) return;
+  const inp = f.querySelector("input"), text = inp.value.trim(); if (!text) return; if (badWord(text)) return alert("Yorumunda yasaklı bir kelime var.");
+  inp.value = "";
+  await push(dref(db, "comments/" + f.dataset.cf), { uid: me.uid, author: nameOf(me), text, createdAt: serverTimestamp() });
+  runTransaction(dref(db, `posts/${f.dataset.cf}/commentsCount`), n => (n || 0) + 1);
+  notifyPost(f.dataset.cf, "comment", "gönderine yorum yaptı: " + text.slice(0, 40));
+});
+$("#saveBio").onclick = async () => {
+  try { await set(dref(db, "users/" + me.uid), { name: me.displayName || "", bio: $("#bio").value.trim() }); $("#bioMsg").textContent = "Kaydedildi."; }
+  catch (e) { $("#bioMsg").textContent = "Kaydedilemedi: " + (e.code || e.message); }
+};
+document.addEventListener("click", e => {
+  const t = e.target.closest("[data-tag]"); if (!t) return; e.preventDefault();
+  document.querySelector('[data-view="home"]').click();
+  setSearch("#" + t.dataset.tag); window.scrollTo(0, 0);
+});
+
+/* ---------- Mesajlar (DM) ---------- */
+let allUsers = [], chatWith = null, online = {};
+const chatId = (a, b) => [a, b].sort().join("_");
+function listenUsers() {
+  const u1 = onValue(dref(db, "users"), snap => {
+    const a = []; snap.forEach(c => { if (c.key !== me.uid && c.val().name) a.push({ uid: c.key, name: c.val().name }); });
+    allUsers = a.sort((x, y) => x.name.localeCompare(y.name, "tr")); renderUsers();
+  });
+  const u2 = onValue(dref(db, "presence"), p => { online = p.val() || {}; renderUsers(); });
+  unsubUsers = () => { u1(); u2(); };
+}
+function renderUsers() {
+  renderPeople();
+  const q = nkey($("#dmSearch").value), l = allUsers.filter(u => !myBlocks[u.uid] && (!q || nkey(u.name).includes(q))).sort((a, b) => (pins().has(b.uid) - pins().has(a.uid)) || ((dmMeta[b.uid]?.last || 0) - (dmMeta[a.uid]?.last || 0)) || ((online[b.uid] ? 1 : 0) - (online[a.uid] ? 1 : 0)));
+  $("#dmUsers").innerHTML = l.length ? l.map(u => `<button class="dmu" data-dm="${esc(u.uid)}"><div class="av">${esc(u.name[0].toUpperCase())}<i class="dot ${online[u.uid] ? "on" : ""}"></i></div><div><b>${esc(u.name)}</b><div class="meta">${online[u.uid] ? "Çevrimiçi" : "Çevrimdışı"}</div></div>${dmMeta[u.uid]?.unread ? `<b class="ub">${dmMeta[u.uid].unread}</b>` : ""}<span data-pin="${esc(u.uid)}" style="margin-left:${dmMeta[u.uid]?.unread ? "8px" : "auto"};opacity:${pins().has(u.uid) ? 1 : .35}" title="Sabitle">📌</span></button>`).join("")
+    : '<div class="empty">Kimse bulunamadı.</div>';
+}
+function openChat(uid) {
+  const u = allUsers.find(x => x.uid === uid); if (!u) return;
+  chatWith = uid; $("#dmWith").textContent = u.name; set(dref(db, `dmmeta/${me.uid}/${uid}/unread`), 0).catch(() => {});
+  $("#dmList").classList.add("hide"); $("#dmChat").classList.remove("hide");
+  chatUnsub?.();
+  $("#dmTyping").classList.add("hide"); dmLast = null; dmSeenTs = 0; $("#dmSeen").classList.add("hide");
+  const c1 = onValue(dref(db, "dms/" + chatId(me.uid, uid)), snap => {
+    const a = []; snap.forEach(c => a.push({ ...c.val(), _k: c.key })); a.sort((x, y) => (x.createdAt || 0) - (y.createdAt || 0));
+    $("#dmMsgs").innerHTML = a.length ? a.filter(m => !myBlocks[m.from]).map(m => `<div class="bub ${m.from === me.uid ? "mine" : ""}">${m.audio ? `<audio controls preload="metadata" src="${esc(m.audio)}" style="max-width:220px"></audio>` : esc(m.text)}<small>${ago(m.createdAt)}${m.from === me.uid ? ` <span data-unsend="${m._k}" style="cursor:pointer" title="Geri al">🗑</span>` : ""}</small></div>`).join("")
+      : '<div class="empty">Henüz mesaj yok. İlk mesajı sen yaz.</div>';
+    window.scrollTo(0, document.body.scrollHeight);
+    dmLast = a[a.length - 1]; updSeen();
+    if (dmLast && dmLast.from !== me.uid) { set(dref(db, "reads/" + chatId(me.uid, uid) + "/" + me.uid), serverTimestamp()).catch(() => {}); set(dref(db, `dmmeta/${me.uid}/${uid}/unread`), 0).catch(() => {}); }
+  }, e => $("#dmMsgs").innerHTML = `<div class="empty">Mesajlar yüklenemedi (${esc(e.code)}). Kuralları kontrol et.</div>`);
+  const c2 = onValue(dref(db, "typing/" + chatId(me.uid, uid) + "/" + uid), t => $("#dmTyping").classList.toggle("hide", !t.val()));
+  const c3 = onValue(dref(db, "reads/" + chatId(me.uid, uid) + "/" + uid), r => { dmSeenTs = r.val() || 0; updSeen(); });
+  chatUnsub = () => { c1(); c2(); c3(); };
+}
+$("#dmUsers").onclick = e => { const pn = e.target.closest("[data-pin]"); if (pn) { togglePin(pn.dataset.pin); return; } const b = e.target.closest("[data-dm]"); if (b) openChat(b.dataset.dm); };
+$("#dmSearch").oninput = renderUsers;
+$("#dmBack").onclick = () => { chatUnsub?.(); chatWith = null; $("#dmChat").classList.add("hide"); $("#dmList").classList.remove("hide"); };
+$("#dmForm").onsubmit = async e => {
+  e.preventDefault(); if (isMuted()) return; if (settings.dmOff && !adminFlag) return alert("Mesajlaşma geçici olarak kapalı."); const t = $("#dmText").value.trim(); if (!t || !chatWith) return; if (badWord(t)) return alert("Mesajında yasaklı bir kelime var."); $("#dmText").value = "";
+  try { await push(dref(db, "dms/" + chatId(me.uid, chatWith)), { from: me.uid, text: t, createdAt: serverTimestamp() }); bumpDm(chatWith); }
+  catch (err) { alert("Mesaj gönderilemedi: " + (err.code || err.message)); }
+};
+let tt;
+$("#dmText").oninput = () => {
+  if (!chatWith) return; const r = dref(db, `typing/${chatId(me.uid, chatWith)}/${me.uid}`);
+  set(r, true).catch(() => {}); clearTimeout(tt); tt = setTimeout(() => set(r, false).catch(() => {}), 2000);
+};
+
+/* ---------- Hikayeler (24 saat) ---------- */
+let stories = [], sv = { list: [], i: 0, t: null };
+function listenStories() {
+  unsubStories = onValue(dref(db, "stories"), snap => {
+    const a = []; snap.forEach(c => { const v = c.val(); if (v.createdAt && Date.now() - v.createdAt < 864e5) a.push({ id: c.key, ...v }); });
+    stories = a.sort((x, y) => x.createdAt - y.createdAt); renderStories();
+  });
+}
+function renderStories() {
+  const by = {}; stories.filter(x => !myBlocks[x.uid]).forEach(x => (by[x.uid] ||= []).push(x));
+  $("#stories").innerHTML = (isGuest ? "" : '<button class="story" id="addStory"><div class="ring add"><div class="av">+</div></div><small>Hikayen</small></button>')
+    + Object.entries(by).map(([uid, l]) => `<button class="story" data-story="${esc(uid)}"><div class="ring"><div class="av">${esc((l[0].author || "?")[0].toUpperCase())}</div></div><small>${esc(l[0].author)}</small></button>`).join("");
+}
+function showStory() {
+  clearTimeout(sv.t); const x = sv.list[sv.i];
+  if (!x) { $("#sview").classList.add("hide"); $("#sbody").innerHTML = ""; return; }
+  $("#sview").classList.remove("hide");
+  $("#sbody").innerHTML = (x.type === "image" ? `<img ${x.mediaRef ? `data-mref="${esc(x.mediaRef)}"` : `src="${esc(x.url)}"`} alt="">` : `<video src="${esc(x.url)}" autoplay playsinline></video>`) + `<div class="sname">${esc(x.author)} · ${ago(x.createdAt)}</div>` + storyBar(x);
+  afterStory(x);
+  const sim = $("#sbody img"); if (sim) loadImg(sim);
+  if (x.type === "image") sv.t = setTimeout(() => { sv.i++; showStory(); }, 5000);
+  else $("#sbody video").onended = () => { sv.i++; showStory(); };
+}
+$("#stories").onclick = e => {
+  if (e.target.closest("#addStory")) return $("#sfile").click();
+  const k = e.target.closest("[data-story]"); if (!k) return;
+  sv = { list: stories.filter(x => x.uid === k.dataset.story), i: 0, t: null }; showStory();
+};
+$("#sview").onclick = e => {
+  const sr = e.target.closest("[data-sr]");
+  if (sr) { const s0 = sv.list[sv.i]; set(dref(db, `storyreacts/${s0.id}/${me.uid}`), sr.dataset.sr).catch(() => {}); notify(s0.uid, "react", "hikayene " + sr.dataset.sr + " bıraktı"); return; }
+  if (e.target.closest(".sbar")) return;
+  if (e.target.closest("#sclose")) { sv.i = 99; return showStory(); }
+  sv.i = Math.max(0, sv.i + (e.clientX < innerWidth / 3 ? -1 : 1)); showStory();
+};
+$("#sfile").onchange = async e => {
+  const f = e.target.files[0]; e.target.value = ""; if (!f) return;
+  if (!f.type.startsWith("image")) return alert("Hikayeye şimdilik sadece fotoğraf eklenebilir.");
+  try {
+    const mr = push(dref(db, "media")); await set(mr, { uid: me.uid, data: await compressImage(f) });
+    await push(dref(db, "stories"), { uid: me.uid, author: nameOf(me), url: "", mediaRef: mr.key, type: "image", createdAt: serverTimestamp() });
+  } catch (err) { alert("Hikaye yüklenemedi: " + (err.code || err.message)); }
+};
+
+/* ---------- Çift tıkla beğen + paylaş ---------- */
+let lastTap = 0;
+document.addEventListener("click", e => {
+  const m = e.target.closest("[data-dbl]");
+  if (m) {
+    const now = Date.now();
+    if (now - lastTap < 350) {
+      lastTap = 0; set(dref(db, `posts/${m.dataset.dbl}/likes/${me.uid}`), true).catch(() => {});
+      const h = m.querySelector(".heart"); h.classList.remove("pop"); void h.offsetWidth; h.classList.add("pop");
+    } else lastTap = now;
+  }
+  const sh = e.target.closest("[data-share]");
+  if (sh) {
+    const d = allDocs.find(x => x.id === sh.dataset.share); if (!d) return;
+    const p = d.data(), url = location.href.split("#")[0] + "#p=" + d.id, text = `${p.author}: ${p.text || ""}`.trim();
+    if (navigator.share) navigator.share({ title: "İzleHub", text, url }).catch(() => {});
+    else navigator.clipboard?.writeText(text + " " + url).then(() => alert("Kopyalandı"));
+  }
+});
+
+/* ---------- Yönetici kararları: yasak, susturma, duyuru ---------- */
+let myBan = null;
+const banEnd = x => x.until === 0 ? "kalıcı" : new Date(x.until).toLocaleString("tr-TR") + " tarihine kadar";
+function applyBan(b) {
+  if (b && b.until !== 0 && b.until < Date.now()) { remove(dref(db, "bans/" + me.uid)).catch(() => {}); b = null; }
+  myBan = b;
+  if (b && b.type !== "mute") {
+    const msg = "Hesabın yasaklandı (" + banEnd(b) + ")." + (b.reason ? " Sebep: " + b.reason : "");
+    signOut(auth).then(() => { $("#err").style.color = ""; $("#err").textContent = msg; });
+  }
+}
+function isMuted() {
+  if (myBan && myBan.until !== 0 && myBan.until < Date.now()) { remove(dref(db, "bans/" + me.uid)).catch(() => {}); myBan = null; }
+  if (!myBan) return false;
+  alert("Susturuldun, bu yüzden paylaşım yapamazsın (" + banEnd(myBan) + ")." + (myBan.reason ? "\nSebep: " + myBan.reason : ""));
+  return true;
+}
+function listenAnn() {
+  unsubAnn = onValue(dref(db, "announcement"), s => {
+    const a = s.val(), ok = a && a.text && (!a.until || a.until > Date.now());
+    $("#ann").textContent = ok ? "📢 " + a.text : ""; $("#ann").classList.toggle("hide", !ok);
+  });
+}
+
+/* ---------- Site ayarları (yönetici panelinden) ---------- */
+let settings = {}, adminFlag = false;
+function applySettings() {
+  $("#guest").classList.toggle("hide", !!settings.guestOff);
+  $("#toggle").classList.toggle("hide", !!settings.regOff && !register);
+  const m = !!settings.maintenance && !adminFlag;
+  $("#maint").classList.toggle("hide", !m);
+  $("#maintMsg").textContent = settings.maintMsg || "Site bakımda. Lütfen daha sonra tekrar dene.";
+}
+onValue(dref(db, "settings"), s => { settings = s.val() || {}; applySettings(); if (me) renderFeeds(); }, () => {});
+$("#warnOk").onclick = () => remove(dref(db, "warnings/" + me.uid)).catch(() => {});
+
+/* ---------- Otomatik moderasyon + şikayet ---------- */
+const normT = x => x.toLocaleLowerCase("tr").replace(/ı/g, "i").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+function badWord(text) {
+  const ws = (settings.badWords || "").split(",").map(w => normT(w).trim()).filter(Boolean);
+  if (!ws.length || adminFlag) return false;
+  const toks = normT(text).split(/[^a-z0-9]+/).filter(Boolean);
+  return toks.some(k => ws.some(w => k === w || (w.length >= 5 && k.includes(w))));
+}
+function slowLeft() {
+  if (!settings.slowSec || adminFlag) return 0;
+  let last = 0; try { last = +localStorage.getItem("izlehub_last_post") || 0; } catch {}
+  return Math.max(0, Math.ceil((last + settings.slowSec * 1000 - Date.now()) / 1000));
+}
+document.addEventListener("click", e => {
+  const rp = e.target.closest("[data-rep]"); if (!rp) return;
+  const d = allDocs.find(x => x.id === rp.dataset.rep); if (!d) return;
+  const reason = prompt("Bu gönderiyi neden şikayet ediyorsun? (isteğe bağlı)"); if (reason === null) return;
+  const p = d.data();
+  push(dref(db, "reports"), { postId: d.id, author: p.author, text: (p.text || "[medya]").slice(0, 160), reason: reason.trim(), by: nameOf(me), byUid: me.uid, at: serverTimestamp() })
+    .then(() => alert("Şikayetin yöneticilere iletildi.")).catch(err => alert("Gönderilemedi: " + (err.code || err.message)));
+});
+
+/* ---------- Fotoğraf (veritabanı), engelleme, kişi arama, sesli mesaj, videolar ---------- */
+let myBlocks = {};
+const mcache = {};
+const compressImage = (file, max = 900, q = 0.72) => new Promise((ok, no) => {
+  const im = new Image(), u = URL.createObjectURL(file);
+  im.onload = () => {
+    const k = Math.min(1, max / Math.max(im.width, im.height)), c = document.createElement("canvas");
+    c.width = Math.round(im.width * k); c.height = Math.round(im.height * k);
+    c.getContext("2d").drawImage(im, 0, 0, c.width, c.height); URL.revokeObjectURL(u); ok(c.toDataURL("image/jpeg", q));
+  };
+  im.onerror = () => no(new Error("Fotoğraf okunamadı")); im.src = u;
+});
+const loadImg = im => {
+  const k = im.dataset.mref; if (!k) return;
+  (mcache[k] ||= get(dref(db, "media/" + k)).then(s => s.val()?.data || "")).then(d => { im.src = d; }).catch(() => {});
+};
+const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { io.unobserve(en.target); loadImg(en.target); } }), { rootMargin: "400px" });
+function hydrate() { document.querySelectorAll("img[data-mref]:not([src]):not([data-obs])").forEach(im => { im.dataset.obs = "1"; io.observe(im); });
+  document.querySelectorAll("article.post[data-pid]:not([data-vo])").forEach(a => { a.dataset.vo = "1"; vio.observe(a); }); }
+
+function renderPeople() {
+  const el = $("#findPeople"); if (!el || !me) return;
+  if (isGuest) { el.innerHTML = ""; return; }
+  const q = nkey(term), blocked = Object.keys(myBlocks);
+  const row = (u, b) => `<div class="dmu" style="cursor:default"><div class="av">${esc((u.name || "?")[0].toUpperCase())}</div><div style="flex:1"><b>${esc(u.name)}</b></div>${b ? "" : `<button class="btn s" data-pmsg="${esc(u.uid)}">💬</button>`}<button class="btn ghost s" data-pblk="${esc(u.uid)}" data-on="${b ? 1 : 0}">${b ? "Engeli kaldır" : "⛔ Engelle"}</button></div>`;
+  const rows = q ? allUsers.filter(u => nkey(u.name).includes(q)) : [];
+  el.innerHTML = (q ? '<div class="top" style="position:static">Kişiler</div>' + (rows.length ? rows.map(u => row(u, myBlocks[u.uid])).join("") : '<div class="empty">Kişi bulunamadı.</div>') : "")
+    + (!q && blocked.length ? '<div class="top" style="position:static">Engellediklerim</div>' + blocked.map(id => row({ uid: id, name: (allUsers.find(x => x.uid === id) || {}).name || "Kullanıcı" }, true)).join("") : "");
+}
+document.addEventListener("click", e => {
+  const bl = e.target.closest("[data-blk],[data-pblk]");
+  if (bl) {
+    const uid = bl.dataset.blk || bl.dataset.pblk, r = dref(db, `blocks/${me.uid}/${uid}`);
+    if (bl.dataset.on === "1") remove(r); else if (confirm("Bu kişi engellensin mi? Gönderilerini, yorumlarını ve mesajlarını görmeyeceksin.")) set(r, true);
+    return;
+  }
+  const pm = e.target.closest("[data-pmsg]");
+  if (pm) { document.querySelector('[data-view="messages"]').click(); openChat(pm.dataset.pmsg); }
+});
+
+let rec = null, recTimer = null;
+$("#dmMic").onclick = async () => {
+  if (rec) { rec.stop(); return; }
+  if (!chatWith || isMuted()) return;
+  if (settings.dmOff && !adminFlag) return alert("Mesajlaşma geçici olarak kapalı.");
+  if (!navigator.mediaDevices || !window.MediaRecorder) return alert("Bu tarayıcı ses kaydını desteklemiyor.");
+  try {
+    const st = await navigator.mediaDevices.getUserMedia({ audio: true }), chunks = [], to = chatWith, t0 = Date.now();
+    const mt = ["audio/webm;codecs=opus", "audio/webm", "audio/mp4"].find(x => MediaRecorder.isTypeSupported(x)) || "";
+    rec = new MediaRecorder(st, mt ? { mimeType: mt, audioBitsPerSecond: 24000 } : {});
+    rec.ondataavailable = ev => { if (ev.data.size) chunks.push(ev.data); };
+    rec.onstop = async () => {
+      clearInterval(recTimer); st.getTracks().forEach(x => x.stop());
+      $("#dmMic").textContent = "🎤"; $("#dmMic").classList.remove("rec");
+      const blob = new Blob(chunks, { type: rec.mimeType || "audio/webm" }); rec = null;
+      if (blob.size < 1500) return;
+      const data = await new Promise(ok => { const fr = new FileReader(); fr.onload = () => ok(fr.result); fr.readAsDataURL(blob); });
+      try { await push(dref(db, "dms/" + chatId(me.uid, to)), { from: me.uid, audio: data, dur: Math.round((Date.now() - t0) / 1000), createdAt: serverTimestamp() }); bumpDm(to); }
+      catch (err) { alert("Sesli mesaj gönderilemedi: " + (err.code || err.message)); }
+    };
+    rec.start(); $("#dmMic").classList.add("rec");
+    recTimer = setInterval(() => { const s = Math.round((Date.now() - t0) / 1000); $("#dmMic").textContent = "⏹ " + s + "s"; if (s >= 60 && rec) rec.stop(); }, 500);
+  } catch { alert("Mikrofon izni verilmedi."); }
+};
+
+let vidsLoaded = false;
+function loadVideos() {
+  if (vidsLoaded) return; vidsLoaded = true;
+  listRepo(GH_DIR).then(files => {
+    const v = files.filter(n => /\.(mp4|webm|mov|m4v|ogv)$/i.test(n));
+    $("#vgrid").innerHTML = v.length ? v.map(n => `<div class="pl" style="text-align:left"><video src="${esc(fileUrl(GH_DIR, n))}" controls preload="metadata" playsinline></video><b style="display:block;margin-top:6px;word-break:break-word">${esc(noExt(n))}</b></div>`).join("")
+      : '<div class="empty" style="grid-column:1/-1">Henüz video yok.</div>';
+  }).catch(() => { $("#vgrid").innerHTML = '<div class="empty" style="grid-column:1/-1">Videolar yüklenemedi.</div>'; });
+}
+
+/* ---------- Video yükleme (Cloudflare Worker üzerinden GitHub deposuna) ---------- */
+function uploadVideo(f) {
+  return new Promise(async (ok, no) => {
+    try {
+      const idt = await me.getIdToken();
+      const b64 = await new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => res(String(fr.result).split(",")[1]); fr.onerror = rej; fr.readAsDataURL(f); });
+      const x = new XMLHttpRequest(); x.open("POST", UPLOAD_URL);
+      x.setRequestHeader("Authorization", "Bearer " + idt);
+      x.setRequestHeader("X-Filename", encodeURIComponent(f.name));
+      x.setRequestHeader("Content-Type", "application/json");
+      x.upload.onprogress = e => { if (e.lengthComputable) $("#send").textContent = "%" + Math.round(100 * e.loaded / e.total); };
+      x.onload = () => { let r = {}; try { r = JSON.parse(x.responseText); } catch {} x.status === 200 && r.url ? ok(r.url) : no(new Error(r.error || "Yükleme başarısız (" + x.status + ")")); };
+      x.onerror = () => no(new Error("Bağlantı hatası"));
+      x.send(JSON.stringify({ message: "Video yüklemesi", content: b64, branch: "main" }));
+    } catch (e) { no(e); }
+  });
+}
+const EMO = ["❤️", "😍", "🔥", "👏", "😮", "😂"];
+
+let extraUnsubs = [], votesData = {}, mySaved = {}, pendingPoll = null, dmLast = null, dmSeenTs = 0;
+
+function listenExtras() {
+  const w = (p, fn, q) => extraUnsubs.push(onValue(q || dref(db, p), s => fn(s.val() || {}), () => {}));
+  w("votes", v => { votesData = v; renderFeeds(); });
+  w("verified", v => { verifiedMap = v; renderFeeds(); });
+  w("news", v => { newsData = v; renderHub(); });
+  w("quiz", v => { quizData = v; renderHub(); });
+  w("quizscores", v => { quizScores = v; renderHub(); });
+  w("rooms", v => { roomsData = v; renderHub(); });
+  if (!isGuest) {
+    w("saved/" + me.uid, v => { mySaved = v; renderFeeds(); });
+    w("notifs/" + me.uid, v => { notifs = v; renderNotifs(); });
+    w("dmmeta/" + me.uid, v => { dmMeta = v; renderUsers(); renderUnread(); });
+  }
+}
+
+const reactSum = p => {
+  const c = {}; Object.values(p.likeVals || {}).forEach(x => { const e = x === true ? "❤️" : x; c[e] = (c[e] || 0) + 1; });
+  return Object.entries(c).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([e, n]) => e + n).join(" ");
+};
+function pollHTML(p, id) {
+  const v = votesData[id] || {}, vals = Object.values(v), tot = vals.length, mine = me ? v[me.uid] : undefined, closed = !!(p.poll.until && Date.now() > p.poll.until), res = isGuest || mine !== undefined || closed;
+  return `<div class="poll"><b>📊 ${esc(p.poll.q)}</b>` + p.poll.opts.map((o, i) => {
+    const n = vals.filter(x => x === i).length, pc = tot ? Math.round(100 * n / tot) : 0;
+    return res ? `<div class="opt"><div class="fill" style="width:${pc}%"></div><span>${esc(o)}${mine === i ? " ✓" : ""} — %${pc} (${n})</span></div>` : `<button data-vote="${id}" data-i="${i}"><span>${esc(o)}</span></button>`;
+  }).join("") + `<small class="meta">${tot} oy${p.poll.until ? (closed ? " · kapandı" : " · " + cd(p.poll.until - Date.now()) + " kaldı") : ""}</small></div>`;
+}
+$("#pollBtn").onclick = () => {
+  if (pendingPoll) { pendingPoll = null; $("#pollChip").classList.add("hide"); return; }
+  if (isGuest) return alert("Anket için hesap oluştur.");
+  const q = prompt("Anket sorusu:"); if (!q || !q.trim()) return;
+  const o = (prompt("Seçenekleri virgülle ayır (2-4 seçenek):", "Evet, Hayır") || "").split(",").map(x => x.trim().slice(0, 40)).filter(Boolean).slice(0, 4);
+  if (o.length < 2) return alert("En az 2 seçenek yaz.");
+  const dd = parseFloat((prompt("Anket kaç gün açık kalsın? (boş bırak = süresiz)", "") || "").replace(",", "."));
+  pendingPoll = { q: q.trim().slice(0, 120), opts: o, ...(dd > 0 ? { until: Date.now() + Math.min(dd, 30) * 864e5 } : {}) };
+  $("#pollChip").textContent = "📊 " + pendingPoll.q + " (" + o.join(" / ") + ") — kaldırmak için Anket'e tekrar bas"; $("#pollChip").classList.remove("hide");
+};
+const cd = ms => { const m = Math.max(0, Math.floor(ms / 6e4)), d = Math.floor(m / 1440), h = Math.floor(m % 1440 / 60); return d ? d + " gün " + h + " sa" : h ? h + " sa " + (m % 60) + " dk" : (m % 60) + " dk"; };
+function updSeen() { $("#dmSeen").classList.toggle("hide", !(dmLast && dmLast.from === me.uid && dmSeenTs && dmSeenTs >= (dmLast.createdAt || 0))); }
+document.addEventListener("click", e => {
+  document.querySelectorAll(".rpick").forEach(x => x.remove());
+  const r = e.target.closest("[data-react]");
+  if (r) {
+    const d = document.createElement("div"), rc = r.getBoundingClientRect(); d.className = "rpick";
+    d.style.left = Math.max(8, Math.min(innerWidth - 290, rc.left)) + "px"; d.style.top = (rc.top > 70 ? rc.top - 54 : rc.bottom + 6) + "px";
+    EMO.forEach(em => { const b = document.createElement("button"); b.textContent = em; b.onclick = () => { set(dref(db, `posts/${r.dataset.react}/likes/${me.uid}`), em).catch(() => {}); notifyPost(r.dataset.react, "react", "gönderine " + em + " bıraktı"); }; d.appendChild(b); });
+    document.body.appendChild(d); return;
+  }
+  const sv = e.target.closest("[data-save]");
+  if (sv) { const q = dref(db, `saved/${me.uid}/${sv.dataset.save}`); mySaved[sv.dataset.save] ? remove(q) : set(q, true); return; }
+  const vt = e.target.closest("[data-vote]");
+  if (vt) { set(dref(db, `votes/${vt.dataset.vote}/${me.uid}`), +vt.dataset.i).catch(() => alert("Oy kaydedilemedi.")); return; }
+});
+const toggleTheme = () => {
+  const n = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+  document.documentElement.dataset.theme = n; try { localStorage.setItem("izlehub_theme", n); } catch {}
+};
+$("#theme").onclick = $("#theme2").onclick = toggleTheme;
+let verifiedMap = {}, notifs = {}, myStreak = 0;
+
+function notify(to, type, text, postId) {
+  if (!to || !me || to === me.uid || isGuest) return;
+  push(dref(db, "notifs/" + to), { fromUid: me.uid, from: nameOf(me), type, text, postId: postId || "", at: serverTimestamp(), read: false }).catch(() => {});
+}
+function notifyPost(id, type, text) { const d = allDocs.find(x => x.id === id); if (d) notify(d.data().uid, type, text, id); }
+function notifyMentions(text, postId) {
+  const seen = new Set();
+  [...text.matchAll(/(?:^|\s)@([\p{L}_][\p{L}\p{N}_]*)/gu)].forEach(m => {
+    const u = allUsers.find(x => nkey(x.name) === nkey(m[1])); if (u && !seen.has(u.uid)) { seen.add(u.uid); notify(u.uid, "mention", "seni bir gönderide etiketledi", postId); }
+  });
+}
+function renderNotifs() {
+  const l = Object.entries(notifs).sort((a, b) => (b[1].at || 0) - (a[1].at || 0)).slice(0, 60), un = l.filter(([, n]) => !n.read).length;
+  $("#nbadge").textContent = un ? " " + un : ""; $("#nbadge2").textContent = un ? " " + un : "";
+  const ic = { like: "❤️", react: "😊", comment: "💬", mention: "📣" };
+  $("#nlist").innerHTML = l.length ? l.map(([, n]) => `<div class="nt ${n.read ? "" : "un"}"><div>${ic[n.type] || "🔔"}</div><div><b>${esc(n.from)}</b> ${esc(n.text)}<div class="meta">${ago(n.at)}</div></div></div>`).join("") : '<div class="empty">Henüz bildirimin yok.</div>';
+}
+function markRead() {
+  if (!me || isGuest) return; const u = {};
+  Object.entries(notifs).forEach(([id, n]) => { if (!n.read) u[id + "/read"] = true; });
+  if (Object.keys(u).length) update(dref(db, "notifs/" + me.uid), u).catch(() => {});
+}
+$("#nclear").onclick = () => { if (me && confirm("Tüm bildirimler silinsin mi?")) remove(dref(db, "notifs/" + me.uid)).catch(() => {}); };
+const nameFor = uid => uid === me.uid ? nameOf(me) : (allUsers.find(x => x.uid === uid) || {}).name || "Kullanıcı";
+function renderBadges() {
+  if (!me) return; const mine = allDocs.filter(d => d.data().uid === me.uid), likes = mine.reduce((n, d) => n + d.data().likes.length, 0);
+  const b = [];
+  if (mine.length >= 1) b.push("🌱 İlk gönderi"); if (mine.length >= 10) b.push("✍️ 10 gönderi"); if (mine.length >= 50) b.push("🔥 50 gönderi");
+  if (likes >= 25) b.push("❤️ 25 beğeni"); if (likes >= 100) b.push("🌟 100 beğeni"); if (myStreak >= 3) b.push("📅 " + myStreak + " günlük seri");
+  if (verifiedMap[me.uid]) b.push("✅ Doğrulanmış");
+  $("#badges").innerHTML = b.length ? b.map(x => `<span class="b mod" style="background:var(--panel2);color:var(--text);border:1px solid var(--line);margin:0 6px 6px 0;display:inline-block">${x}</span>`).join("") : '<span class="meta">Rozet kazanmak için paylaşım yap!</span>';
+}
+async function bumpStreak() {
+  try {
+    const r = dref(db, "users/" + me.uid), s = (await get(r)).val() || {}, today = new Date().toISOString().slice(0, 10), y = new Date(Date.now() - 864e5).toISOString().slice(0, 10);
+    if (s.lastDay === today) { myStreak = s.streak || 1; return renderBadges(); }
+    const n = s.lastDay === y ? (s.streak || 0) + 1 : 1;
+    await update(r, { lastDay: today, streak: n, best: Math.max(n, s.best || 0) }); myStreak = n; renderBadges();
+  } catch {}
+}
+document.addEventListener("click", e => {
+  const au = e.target.closest("[data-author]");
+  if (au) { e.preventDefault(); document.querySelector('[data-view="home"]').click(); setSearch(au.dataset.author); window.scrollTo(0, 0); return; }
+  const ed = e.target.closest("[data-edit]");
+  if (ed) {
+    const d = allDocs.find(x => x.id === ed.dataset.edit); if (!d) return;
+    const v = prompt("Gönderiyi düzenle:", d.data().text || ""); if (v === null) return;
+    if (badWord(v)) return alert("Yazında yasaklı bir kelime var.");
+    update(dref(db, "posts/" + d.id), { text: v.trim().slice(0, 280), edited: true }).catch(err => alert("Kaydedilemedi: " + (err.code || err.message))); return;
+  }
+  const us = e.target.closest("[data-unsend]");
+  if (us && chatWith && confirm("Bu mesaj geri alınsın mı?")) { remove(dref(db, "dms/" + chatId(me.uid, chatWith) + "/" + us.dataset.unsend)).catch(() => {}); return; }
+});
+let catFilter = "", hashDone = "", dip = null;
+
+const seenPosts = new Set(), pendV = {};
+const vio = new IntersectionObserver(es => es.forEach(en => {
+  if (!en.isIntersecting) return; const a = en.target, id = a.dataset.pid; vio.unobserve(a);
+  if (isGuest || !me || a.dataset.puid === me.uid || seenPosts.has(id)) return; seenPosts.add(id); pendV[id] = (pendV[id] || 0) + 1;
+}), { threshold: 0.6 });
+setInterval(() => { for (const id in pendV) { const n = pendV[id]; delete pendV[id]; runTransaction(dref(db, `posts/${id}/views`), v => (v || 0) + n).catch(() => {}); } }, 30000);
+
+const storyBar = x => isGuest ? "" : (x.uid === me.uid ? '<div class="sbar"><span id="sviews">👁 …</span></div>' : '<div class="sbar">' + EMO.map(em => `<button data-sr="${em}">${em}</button>`).join("") + "</div>");
+function afterStory(x) {
+  if (isGuest) return;
+  if (x.uid !== me.uid) { set(dref(db, `storyviews/${x.id}/${me.uid}`), true).catch(() => {}); return; }
+  Promise.all([get(dref(db, "storyviews/" + x.id)), get(dref(db, "storyreacts/" + x.id))]).then(([v, r]) => {
+    const c = {}; Object.values(r.val() || {}).forEach(e => c[e] = (c[e] || 0) + 1);
+    const el = $("#sviews"); if (el) el.textContent = "👁 " + Object.keys(v.val() || {}).length + (Object.keys(c).length ? "   " + Object.entries(c).map(([e, n]) => e + n).join(" ") : "");
+  }).catch(() => {});
+}
+function renderWeek() {
+  const el = $("#weekBest"); if (!el || !me) return;
+  const cut = Date.now() - 7 * 864e5, best = allDocs.filter(d => (d.data().createdAt || 0) > cut && !myBlocks[d.data().uid]).sort((a, b) => b.data().likes.length - a.data().likes.length)[0];
+  if (!best || best.data().likes.length < 1) { el.classList.add("hide"); return; }
+  const p = best.data(); el.classList.remove("hide"); el.dataset.goto = best.id;
+  el.innerHTML = `🏆 <b>Haftanın gönderisi</b> — ${esc(p.author)}: ${esc((p.text || "[medya]").slice(0, 60))} <span class="meta">(${p.likes.length} ❤)</span>`;
+}
+function openHash() {
+  const m = location.hash.match(/^#p=([\w-]+)/); if (!m || hashDone === m[1]) return;
+  const el = document.getElementById("post-" + m[1]); if (!el) return; hashDone = m[1];
+  el.scrollIntoView({ block: "center" }); el.style.outline = "2px solid var(--green)"; setTimeout(() => el.style.outline = "", 3000);
+}
+document.addEventListener("click", e => {
+  if (e.target.id === "pmodal" || e.target.id === "pclose") { $("#pmodal").classList.add("hide"); return; }
+  const gt = e.target.closest("[data-goto]");
+  if (gt) { document.querySelector('[data-view="home"]').click(); setTimeout(() => { const el = document.getElementById("post-" + gt.dataset.goto); if (el) { el.scrollIntoView({ block: "center" }); el.style.outline = "2px solid var(--green)"; setTimeout(() => el.style.outline = "", 3000); } }, 80); return; }
+  const ct = e.target.closest("[data-cat]");
+  if (ct) { catFilter = ct.dataset.cat; document.querySelectorAll("[data-cat]").forEach(x => x.classList.toggle("ghost", x !== ct)); renderFeeds(); return; }
+  const fs = e.target.closest("[data-fs]");
+  if (fs) { const n = Math.max(-2, Math.min(4, (+localStorage.getItem("izlehub_fs") || 0) + +fs.dataset.fs)); try { localStorage.setItem("izlehub_fs", n); } catch {} document.documentElement.style.fontSize = (16 + n * 1.5) + "px"; }
+});
+
+$("#emoBar").onclick = e => { const b = e.target.closest("button"); if (!b) return; const ta = $("#text"), s = ta.selectionStart ?? ta.value.length; ta.value = (ta.value.slice(0, s) + b.textContent + ta.value.slice(ta.selectionEnd ?? s)).slice(0, 280); ta.focus(); ta.dispatchEvent(new Event("input")); };
+$("#text").addEventListener("input", () => { try { localStorage.setItem("izlehub_draft", $("#text").value); } catch {} });
+try { const dr = localStorage.getItem("izlehub_draft"); if (dr) { $("#text").value = dr; $("#cnt").textContent = dr.length + "/280"; } document.documentElement.style.fontSize = (16 + (+localStorage.getItem("izlehub_fs") || 0) * 1.5) + "px"; } catch {}
+$("#nperm").onclick = async () => { if (!("Notification" in window)) return alert("Bu tarayıcı bildirimleri desteklemiyor."); const r = await Notification.requestPermission(); alert(r === "granted" ? "Bildirimler açıldı." : "Bildirim izni verilmedi."); };
+addEventListener("online", () => $("#offline").classList.add("hide")); addEventListener("offline", () => $("#offline").classList.remove("hide"));
+if (!navigator.onLine) $("#offline").classList.remove("hide");
+addEventListener("beforeinstallprompt", e => { e.preventDefault(); dip = e; $("#install").classList.remove("hide"); });
+$("#install").onclick = async () => { if (!dip) return; dip.prompt(); await dip.userChoice.catch(() => {}); dip = null; $("#install").classList.add("hide"); };
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+let dmMeta = {};
+
+const pins = () => { try { return new Set(JSON.parse(localStorage.getItem("izlehub_pins") || "[]")); } catch { return new Set(); } };
+function togglePin(uid) { const s = pins(); s.has(uid) ? s.delete(uid) : s.add(uid); try { localStorage.setItem("izlehub_pins", JSON.stringify([...s])); } catch {} renderUsers(); }
+function bumpDm(to) {
+  if (!to) return;
+  runTransaction(dref(db, `dmmeta/${to}/${me.uid}/unread`), v => (v || 0) + 1).catch(() => {});
+  update(dref(db, `dmmeta/${to}/${me.uid}`), { last: serverTimestamp() }).catch(() => {});
+}
+function renderUnread() {
+  const n = Object.values(dmMeta).reduce((s, x) => s + (x.unread || 0), 0);
+  $("#mbadge").textContent = n ? " " + n : ""; $("#mbadge2").textContent = n ? " " + n : "";
+}
+function renderGallery() {
+  const l = allDocs.filter(d => d.data().mediaType === "image" && !myBlocks[d.data().uid]).slice(0, 60);
+  $("#gal").innerHTML = l.length ? l.map(d => { const p = d.data(); return `<img data-goto="${d.id}" ${p.mediaRef ? `data-mref="${esc(p.mediaRef)}"` : `src="${esc(p.videoUrl)}"`} alt="">`; }).join("") : '<div class="empty" style="grid-column:1/-1">Henüz fotoğraf yok.</div>';
+}
+function openWeekly() {
+  const cut = Date.now() - 7 * 864e5, ps = allDocs.filter(d => (d.data().createdAt || 0) > cut), likes = ps.reduce((n, d) => n + d.data().likes.length, 0);
+  const by = {}; ps.forEach(d => by[d.data().author] = (by[d.data().author] || 0) + 1);
+  const top = Object.entries(by).sort((a, b) => b[1] - a[1])[0], best = ps.slice().sort((a, b) => b.data().likes.length - a.data().likes.length)[0];
+  const vids = ps.filter(d => d.data().mediaType === "video").length, pics = ps.filter(d => d.data().mediaType === "image").length;
+  $("#pbox").innerHTML = '<h2>📰 Haftalık özet</h2><div style="text-align:left;display:grid;gap:8px">'
+    + `<div>📝 <b>${ps.length}</b> gönderi · ❤ <b>${likes}</b> beğeni</div><div>🎬 ${vids} video · 📷 ${pics} fotoğraf</div>`
+    + (top ? `<div>🏆 En aktif: <b>${esc(top[0])}</b> (${top[1]} gönderi)</div>` : "")
+    + (best && best.data().likes.length ? `<div>🌟 Haftanın gönderisi: <b>${esc(best.data().author)}</b> — ${esc((best.data().text || "[medya]").slice(0, 50))} (${best.data().likes.length} ❤)</div>` : "")
+    + '</div><button class="btn" id="pclose">Kapat</button>';
+  $("#pmodal").classList.remove("hide");
+}
+document.addEventListener("click", e => { if (e.target.closest("[data-weekly]")) openWeekly(); });
+
+let newsData = {}, quizData = {}, quizScores = {}, roomsData = {}, roomMsgs = {};
+
+let hubTool = "", newsOpen = "", roomOpen = "", quizFb = "", roomUnsub = null;
+
+const EMPTY = '<div class="empty">Henüz bir şey yok.</div>';
+const padBox = h => `<div style="padding:12px 18px">${h}</div>`;
+const backBtn = (to = "") => `<button class="btn ghost s" data-tool="${to}" style="margin-bottom:10px">← Geri</button>`;
+const HUB = [["news", "📰", "Haberler"], ["quiz", "🧠", "Bilgi yarışması"], ["rooms", "💬", "Sohbet odaları"], ["level", "🏅", "Seviye & sıralama"]];
+
+const TITLES = ["Çaylak", "Amatör", "Yıldız", "Usta", "Kaptan", "Efsane"];
+const lvOf = xp => Math.floor(Math.sqrt(xp / 20)) + 1, titleOf = lv => TITLES[Math.min(TITLES.length - 1, Math.floor((lv - 1) / 3))];
+function xpTable() {
+  const x = {}, add = (u, n) => { if (u) x[u] = (x[u] || 0) + n; };
+  allDocs.forEach(d => { const p = d.data(); add(p.uid, 10 + 2 * p.likes.length + (p.commentsCount || 0)); });
+  Object.entries(quizScores).forEach(([u, s]) => add(u, s.pts || 0));
+  return x;
+}
+
+const tools = {};
+tools.news = () => {
+  if (newsOpen && newsData[newsOpen]) { const n = newsData[newsOpen]; return padBox(backBtn("news") + `<h2>${esc(n.title)}</h2><div class="meta">${ago(n.at)} · ${esc(n.by || "")}</div><div class="txt" style="margin-top:10px">${linkTags(esc(n.body || ""))}</div>`); }
+  const l = Object.entries(newsData).sort((a, b) => (b[1].at || 0) - (a[1].at || 0));
+  return l.length ? l.map(([id, n]) => `<div class="fx" data-act="news" data-id="${id}" style="cursor:pointer"><div style="flex:1"><b>${esc(n.title)}</b><div class="meta">${esc((n.body || "").slice(0, 90))}…</div></div><div class="meta">${ago(n.at)}</div></div>`).join("") : EMPTY;
+};
+tools.quiz = () => {
+  const my = quizScores[me.uid] || {}, ans = my.answered || {}, qs = Object.entries(quizData).sort((a, b) => (a[1].at || 0) - (b[1].at || 0)), next = qs.find(([id]) => !ans[id]);
+  const board = Object.entries(quizScores).map(([u, s]) => [u, s.pts || 0]).filter(x => x[1] > 0).sort((a, b) => b[1] - a[1]).slice(0, 10);
+  return padBox(`<div class="meta">Puanın: <b>${my.pts || 0}</b> · ${Object.keys(ans).length}/${qs.length} soru</div>` + (quizFb ? `<div class="live" style="margin:8px 0">${quizFb}</div>` : "")
+    + (next ? `<h3 style="margin:12px 0">${esc(next[1].q)}</h3><div class="poll">${next[1].opts.map((o, i) => `<button data-act="quiz" data-id="${next[0]}" data-i="${i}"><span>${esc(o)}</span></button>`).join("")}</div>` : '<div class="empty">Şu an cevaplanacak soru kalmadı. 🎉</div>')
+    + '<div class="top" style="position:static;margin-top:12px">🏆 Sıralama</div>' + (board.length ? board.map(([u, p], i) => `<div class="fx"><div class="d">${["🥇", "🥈", "🥉"][i] || i + 1}</div><div style="flex:1"><b>${esc(nameFor(u))}</b></div><b>${p} puan</b></div>`).join("") : '<div class="meta">Henüz puan yok.</div>'));
+};
+tools.rooms = () => {
+  if (roomOpen && roomsData[roomOpen]) { const r = roomsData[roomOpen]; return padBox(backBtn("rooms") + `<h3>${esc(r.icon || "💬")} ${esc(r.name)}</h3><div id="rmMsgs" style="max-height:340px;overflow-y:auto;border:1px solid var(--line);border-radius:12px;padding:8px;margin:8px 0"></div>` + (isGuest ? "" : '<form id="rmForm" class="cform"><input class="f" id="rmText" maxlength="200" placeholder="Mesaj yaz…" autocomplete="off"><button class="btn">Gönder</button></form>')); }
+  const l = Object.entries(roomsData);
+  return l.length ? l.map(([id, r]) => `<div class="fx" data-act="room" data-id="${id}" style="cursor:pointer"><div class="d" style="font-size:26px">${esc(r.icon || "💬")}</div><div style="flex:1"><b>${esc(r.name)}</b><div class="meta">${esc(r.desc || "")}</div></div></div>`).join("") : EMPTY;
+};
+function paintRoom() {
+  const el = $("#rmMsgs"); if (!el) return; const l = Object.values(roomMsgs).filter(m => !myBlocks[m.uid]);
+  el.innerHTML = l.length ? l.map(m => `<div class="lc"><b>${esc(m.author)}</b> ${esc(m.text)}</div>`).join("") : '<div class="meta">İlk mesajı sen yaz.</div>'; el.scrollTop = 1e9;
+}
+tools.level = () => {
+  const x = xpTable(), myxp = (x[me.uid] || 0) + myStreak * 5, lv = lvOf(myxp), lo = 20 * (lv - 1) ** 2, hi = 20 * lv ** 2, board = Object.entries(x).sort((a, b) => b[1] - a[1]).slice(0, 15);
+  return padBox((isGuest ? "" : `<div class="live" style="margin-bottom:12px"><div style="font-size:24px"><b>Seviye ${lv}</b> · ${titleOf(lv)}</div><div class="meta">${myxp} / ${hi} XP</div><div class="lvbar"><i style="width:${Math.min(100, Math.round(100 * (myxp - lo) / (hi - lo)))}%"></i></div></div>`)
+    + '<div class="meta" style="margin-bottom:8px">XP: gönderi +10, beğeni +2, yorum +1, quiz puanı, günlük seri ×5</div>'
+    + (board.map(([u, p], i) => `<div class="fx" data-prof="${esc(u)}" style="cursor:pointer"><div class="d">${["🥇", "🥈", "🥉"][i] || i + 1}</div><div style="flex:1"><b>${esc(nameFor(u))}</b>${verifiedMap[u] ? " ✅" : ""}<div class="meta">Seviye ${lvOf(p)} · ${titleOf(lvOf(p))}</div></div><b>${p} XP</b></div>`).join("") || EMPTY));
+};
+function renderHub() {
+  const el = $("#hubBody"); if (!el || !me || $("#hub").classList.contains("hide")) return;
+  if (hubTool === "rooms" && roomOpen && $("#rmMsgs")) return;
+  if (!hubTool) { el.innerHTML = '<div class="hubg">' + HUB.map(([k, i, n]) => `<button class="hubc" data-tool="${k}"><b>${i}</b>${n}</button>`).join("") + "</div>"; return; }
+  el.innerHTML = `<div style="padding:10px 18px 0">${backBtn("")}</div>` + tools[hubTool]();
+  if (hubTool === "rooms" && roomOpen) paintRoom();
+}
+
+function leaveRoom() { roomUnsub?.(); roomUnsub = null; roomOpen = ""; roomMsgs = {}; }
+$("#hubBody").addEventListener("click", async e => {
+  const tl = e.target.closest("[data-tool]");
+  if (tl) { hubTool = tl.dataset.tool; newsOpen = ""; leaveRoom(); quizFb = ""; renderHub(); return; }
+  const a = e.target.closest("[data-act]"); if (!a) return;
+  const act = a.dataset.act, id = a.dataset.id;
+  try {
+    if (act === "news") { newsOpen = id; renderHub(); }
+    if (act === "quiz") {
+      if (isGuest) return alert("Yarışmaya katılmak için hesap oluştur.");
+      const q = quizData[id], ok = +a.dataset.i === q.ans;
+      quizFb = ok ? "✅ Doğru! +10 puan" : "❌ Yanlış. Doğrusu: " + esc(q.opts[q.ans]);
+      await update(dref(db, "quizscores/" + me.uid), { ["answered/" + id]: true });
+      if (ok) await runTransaction(dref(db, `quizscores/${me.uid}/pts`), v => (v || 0) + 10);
+      renderHub();
+    }
+    if (act === "room") {
+      roomOpen = id; roomMsgs = {}; roomUnsub?.();
+      roomUnsub = onValue(query(dref(db, "roomchat/" + id), limitToLast(80)), s => { roomMsgs = s.val() || {}; paintRoom(); });
+      renderHub();
+    }
+  } catch (err) { alert("İşlem başarısız: " + (err.code || err.message)); }
+});
+
+document.addEventListener("submit", async e => {
+  if (e.target.id !== "rmForm") return;
+  e.preventDefault(); const x = $("#rmText").value.trim(); if (!x || isMuted()) return;
+  if (badWord(x)) return alert("Mesajında yasaklı bir kelime var.");
+  $("#rmText").value = "";
+  try { await push(dref(db, "roomchat/" + roomOpen), { uid: me.uid, author: nameOf(me), text: x, at: serverTimestamp() }); } catch (err) { alert("Gönderilemedi: " + (err.code || err.message)); }
+});
+
+async function openProfile(uid) {
+  const xp = (xpTable()[uid] || 0) + (me && uid === me.uid ? myStreak * 5 : 0), lv = lvOf(xp), my = allDocs.filter(d => d.data().uid === uid), nm = nameFor(uid);
+  $("#pbox").innerHTML = `<div class="av" style="width:90px;height:90px;font-size:36px;margin:0 auto">${esc(nm[0])}</div><h2>${esc(nm)} ${verifiedMap[uid] ? "✅" : ""}</h2><div class="meta">Seviye ${lv} · ${titleOf(lv)} · ${xp} XP</div><div id="pbio" class="meta"></div>`
+    + `<div>📝 ${my.length} gönderi · ❤ ${my.reduce((n, d) => n + d.data().likes.length, 0)} beğeni</div>`
+    + (!me || uid === me.uid || isGuest ? "" : `<div class="acts" style="justify-content:center"><button class="btn s" data-pmsg="${esc(uid)}">💬 Mesaj</button><button class="btn ghost s" data-pblk="${esc(uid)}" data-on="${myBlocks[uid] ? 1 : 0}">${myBlocks[uid] ? "Engeli kaldır" : "⛔ Engelle"}</button></div>`) + '<button class="btn" id="pclose">Kapat</button>';
+  $("#pmodal").classList.remove("hide");
+  get(dref(db, "users/" + uid + "/bio")).then(s => { if (s.val() && $("#pbio")) $("#pbio").textContent = s.val(); }).catch(() => {});
+}
+document.addEventListener("click", e => {
+  const pf = e.target.closest("[data-prof]"); if (pf) { openProfile(pf.dataset.prof); return; }
+  if (e.target.closest("[data-pmsg],[data-pblk]")) $("#pmodal").classList.add("hide");
+});
+</script>
 </body>
 </html>
